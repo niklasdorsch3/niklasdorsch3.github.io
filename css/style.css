@@ -24,19 +24,21 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-    font-weight: 500;
-    line-height: 1.2;
+    font-weight: 400;
+    line-height: 1.3;
     margin-bottom: 1rem;
 }
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 2rem; }
-h4 { font-size: 1.5rem; }
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.3rem; }
+h4 { font-size: 1.1rem; }
 
 p {
     margin-bottom: 1rem;
     color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 a {
@@ -163,44 +165,29 @@ a:hover {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
-    padding: 150px 0 100px;
+    background-color: white;
+    padding: 120px 0 80px;
     text-align: center;
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .hero h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
     color: #222;
-}
-
-.hero-subtitle {
-    font-size: 1.5rem;
-    color: #666;
-    margin-bottom: 1.5rem;
     font-weight: 300;
 }
 
-.hero-description {
+.hero-subtitle {
     font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 2.5rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    color: #666;
+    margin-bottom: 0;
+    font-weight: 300;
 }
 
 /* Page Header */
@@ -223,73 +210,117 @@ a:hover {
     margin: 0 auto;
 }
 
-/* Featured Works */
-.featured-works {
-    padding: 80px 0;
-    background-color: white;
+/* Collections */
+.collections {
+    padding: 60px 0;
+    background-color: #fafafa;
 }
 
-.featured-works h2 {
+.collections h2 {
     text-align: center;
     margin-bottom: 3rem;
     color: #222;
+    font-weight: 300;
 }
 
-.works-grid {
+.collections-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    margin-bottom: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.work-item {
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.collection-item {
+    text-align: center;
 }
 
-.work-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+.collection-item a {
+    display: block;
+    color: inherit;
+    transition: opacity 0.3s ease;
 }
 
-.work-image {
+.collection-item a:hover {
+    opacity: 0.7;
+}
+
+.collection-image {
     aspect-ratio: 1;
     overflow: hidden;
+    margin-bottom: 1rem;
 }
 
-.work-image img {
+.collection-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.work-item:hover .work-image img {
-    transform: scale(1.05);
+.collection-item:hover .collection-image img {
+    transform: scale(1.02);
 }
 
-.work-info {
-    padding: 1.5rem;
-    text-align: center;
-}
-
-.work-info h3 {
-    margin-bottom: 0.5rem;
+.collection-item h3 {
+    margin-bottom: 0.25rem;
     color: #222;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+    font-weight: 400;
 }
 
-.work-info p {
+.collection-item p {
     color: #666;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     margin: 0;
 }
 
-.view-all {
+/* About Section */
+.about {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.about-content {
+    max-width: 700px;
+    margin: 0 auto;
     text-align: center;
+}
+
+.about h2 {
+    margin-bottom: 2rem;
+    color: #222;
+    font-weight: 300;
+}
+
+.about-text p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 0 80px;
+    background-color: #fafafa;
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 1rem;
+    color: #222;
+    font-weight: 300;
+}
+
+.contact-content > p {
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-size: 1rem;
 }
 
 /* Portfolio Gallery */
@@ -684,16 +715,11 @@ footer p {
     }
 
     .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        align-items: center;
+        font-size: 2rem;
     }
 
     .page-header h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .works-grid {
@@ -735,19 +761,19 @@ footer p {
     }
 
     .hero {
-        padding: 120px 0 80px;
+        padding: 100px 0 60px;
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .hero-subtitle {
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
 
     .page-header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .gallery-grid {

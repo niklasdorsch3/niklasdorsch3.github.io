@@ -25,16 +25,16 @@
                 </div>
                 <ul class="nav-menu">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link active">Home</a>
+                        <a href="#home" class="nav-link active">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="portfolio.html" class="nav-link">Portfolio</a>
+                        <a href="#collections" class="nav-link">Collections</a>
                     </li>
                     <li class="nav-item">
-                        <a href="about.html" class="nav-link">About</a>
+                        <a href="#about" class="nav-link">About</a>
                     </li>
                     <li class="nav-item">
-                        <a href="contact.html" class="nav-link">Contact</a>
+                        <a href="#contact" class="nav-link">Contact</a>
                     </li>
                 </ul>
                 <div class="hamburger">
@@ -47,52 +47,72 @@
     </header>
 
     <main>
-        <section class="hero">
+        <section id="home" class="hero">
             <div class="hero-content">
                 <h1>Niklas Dorsch</h1>
                 <p class="hero-subtitle">Contemporary Artist</p>
-                <p class="hero-description">Exploring abstract landscapes through mythical narratives, where organic forms flow, clash, and shape space in unexpected ways.</p>
-                <div class="hero-buttons">
-                    <a href="portfolio.html" class="btn btn-primary">View Portfolio</a>
-                    <a href="about.html" class="btn btn-secondary">About the Artist</a>
+            </div>
+        </section>
+
+        <section id="collections" class="collections">
+            <div class="container">
+                <h2>Collections</h2>
+                <div class="collections-grid">
+                    <div class="collection-item">
+                        <a href="abstracts.html">
+                            <div class="collection-image">
+                                <img src="images/artworks/placeholder-1.jpg" alt="Abstract Landscapes" loading="lazy">
+                            </div>
+                            <h3>Abstract Landscapes</h3>
+                            <p>8 works</p>
+                        </a>
+                    </div>
+                    
+                    <div class="collection-item">
+                        <a href="figures.html">
+                            <div class="collection-image">
+                                <img src="images/artworks/placeholder-4.jpg" alt="Figures & Forms" loading="lazy">
+                            </div>
+                            <h3>Figures & Forms</h3>
+                            <p>6 works</p>
+                        </a>
+                    </div>
+                    
+                    <div class="collection-item">
+                        <a href="studies.html">
+                            <div class="collection-image">
+                                <img src="images/artworks/placeholder-3.jpg" alt="Studies" loading="lazy">
+                            </div>
+                            <h3>Studies</h3>
+                            <p>12 works</p>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="featured-works">
+        <section id="about" class="about">
             <div class="container">
-                <h2>Featured Works</h2>
-                <div class="works-grid">
-                    <div class="work-item">
-                        <div class="work-image">
-                            <img src="images/artworks/placeholder-1.jpg" alt="Still life 1" loading="lazy">
-                        </div>
-                        <div class="work-info">
-                            <h3>Still life 1</h3>
-                            <p>Oil on Canvas</p>
-                        </div>
-                    </div>
-                    <div class="work-item">
-                        <div class="work-image">
-                            <img src="images/artworks/placeholder-2.jpg" alt="The Foot" loading="lazy">
-                        </div>
-                        <div class="work-info">
-                            <h3>The Foot</h3>
-                            <p>Oil on Canvas</p>
-                        </div>
-                    </div>
-                    <div class="work-item">
-                        <div class="work-image">
-                            <img src="images/artworks/placeholder-3.jpg" alt="Nude Woman" loading="lazy">
-                        </div>
-                        <div class="work-info">
-                            <h3>Nude Woman</h3>
-                            <p>Oil on Gesso board, 12 x 12</p>
-                        </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About</h2>
+                        <p>Niklas Dorsch began painting in 2019 after moving to New York, where classes at the New York Studio School deepened his commitment to art. His work focuses on abstract landscapes inspired by mythical narratives—especially German fairytales—where organic forms flow, clash, and shape space in unexpected ways.</p>
+                        
+                        <p>Using wet-on-wet techniques and a minimal brush palette, Niklas begins with abstract backgrounds and gradually "carves out" imagined forms. Music often guides the rhythm and structure of each composition.</p>
                     </div>
                 </div>
-                <div class="view-all">
-                    <a href="portfolio.html" class="btn btn-outline">View All Works</a>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <h2>Contact</h2>
+                    <p>For inquiries about artwork, commissions, or exhibitions</p>
+                    <div class="contact-info">
+                        <p>niklasdorsch@example.com</p>
+                        <p>New York, NY</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -101,9 +121,6 @@
     <footer>
         <div class="container">
             <p>&copy; 2024 Niklas Dorsch. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="contact.html">Contact</a>
-            </div>
         </div>
     </footer>
 

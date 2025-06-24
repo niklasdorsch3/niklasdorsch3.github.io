@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Studies collection by Niklas Dorsch - Experimental works and artistic explorations">
+    <meta property="og:title" content="Studies - Niklas Dorsch">
+    <meta property="og:description" content="Experimental studies and artistic explorations">
+    
+    <title>Studies - Niklas Dorsch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">Niklas Dorsch</a>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html#home" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#collections" class="nav-link">Collections</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#about" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#contact" class="nav-link">Contact</a>
+                    </li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Studies</h1>
+                <p>Experimental works exploring technique and form</p>
+            </div>
+        </section>
+
+        <section class="portfolio-gallery">
+            <div class="container">
+                <div class="gallery-grid">
+                    <div class="gallery-item" data-title="Nude Woman" data-medium="Oil on Gesso board" data-dimensions="12 x 12" data-year="2024">
+                        <img src="images/artworks/placeholder-3.jpg" alt="Nude Woman" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Nude Woman</h3>
+                            <p>Oil on Gesso board, 12 x 12</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-title="Study 1" data-medium="Oil on Canvas" data-year="2024">
+                        <img src="images/artworks/placeholder-1.jpg" alt="Study 1" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Study 1</h3>
+                            <p>Oil on Canvas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-title="Study 2" data-medium="Oil on Canvas" data-year="2024">
+                        <img src="images/artworks/placeholder-2.jpg" alt="Study 2" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Study 2</h3>
+                            <p>Oil on Canvas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" data-title="Study 3" data-medium="Oil on Canvas" data-year="2024">
+                        <img src="images/artworks/placeholder-4.jpg" alt="Study 3" loading="lazy">
+                        <div class="gallery-overlay">
+                            <h3>Study 3</h3>
+                            <p>Oil on Canvas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <img id="lightbox-image" src="" alt="">
+            <div class="lightbox-info">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-details"></p>
+            </div>
+            <div class="lightbox-nav">
+                <button id="lightbox-prev" class="lightbox-btn">&#8249;</button>
+                <button id="lightbox-next" class="lightbox-btn">&#8250;</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Niklas Dorsch. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
