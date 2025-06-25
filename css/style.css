@@ -166,28 +166,32 @@ a:hover {
 /* Hero Section */
 .hero {
     background-color: white;
-    padding: 120px 0 80px;
+    padding: 140px 0 100px;
     text-align: center;
+    margin-top: 70px;
 }
 
 .hero-content {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
+    font-size: 4rem;
+    margin-bottom: 1rem;
     color: #222;
     font-weight: 300;
+    letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: #666;
     margin-bottom: 0;
     font-weight: 300;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 /* Page Header */
@@ -212,22 +216,23 @@ a:hover {
 
 /* Collections */
 .collections {
-    padding: 60px 0;
-    background-color: #fafafa;
+    padding: 80px 0;
+    background-color: #f8f8f8;
 }
 
 .collections h2 {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
     color: #222;
     font-weight: 300;
+    font-size: 2.2rem;
 }
 
 .collections-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 900px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -246,81 +251,89 @@ a:hover {
 }
 
 .collection-image {
-    aspect-ratio: 1;
+    aspect-ratio: 4/5;
     overflow: hidden;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 2px;
 }
 
 .collection-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
 }
 
 .collection-item:hover .collection-image img {
-    transform: scale(1.02);
+    transform: scale(1.03);
 }
 
 .collection-item h3 {
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
     color: #222;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
 .collection-item p {
-    color: #666;
-    font-size: 0.85rem;
+    color: #888;
+    font-size: 0.9rem;
     margin: 0;
+    font-weight: 300;
 }
 
 /* About Section */
 .about {
-    padding: 60px 0;
+    padding: 80px 0;
     background-color: white;
 }
 
 .about-content {
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
     text-align: center;
 }
 
 .about h2 {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     color: #222;
     font-weight: 300;
+    font-size: 2.2rem;
 }
 
 .about-text p {
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: #555;
 }
 
 /* Contact Section */
 .contact {
-    padding: 60px 0 80px;
-    background-color: #fafafa;
+    padding: 80px 0 100px;
+    background-color: #f8f8f8;
     text-align: center;
 }
 
 .contact h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     color: #222;
     font-weight: 300;
+    font-size: 2.2rem;
 }
 
 .contact-content > p {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     color: #666;
+    font-size: 1.1rem;
 }
 
 .contact-info p {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
     color: #333;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    font-weight: 400;
 }
 
 /* Portfolio Gallery */
@@ -714,16 +727,25 @@ footer p {
         transform: translateY(-8px) rotate(-45deg);
     }
 
+    .hero {
+        padding: 100px 0 60px;
+    }
+
     .hero h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .collections-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .page-header h1 {
         font-size: 2rem;
-    }
-
-    .works-grid {
-        grid-template-columns: 1fr;
     }
 
     .gallery-grid {
@@ -761,15 +783,19 @@ footer p {
     }
 
     .hero {
-        padding: 100px 0 60px;
+        padding: 80px 0 50px;
     }
 
     .hero h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .collections, .about, .contact {
+        padding: 50px 0;
     }
 
     .page-header h1 {

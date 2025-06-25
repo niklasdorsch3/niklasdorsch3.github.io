@@ -1,6 +1,6 @@
 # Niklas Dorsch - Artist Portfolio
 
-A professional portfolio website for contemporary artist Niklas Dorsch, showcasing abstract landscapes inspired by mythical narratives.
+A minimal portfolio website for contemporary artist Niklas Dorsch, featuring a clean single-page design with organized collections of abstract landscapes inspired by mythical narratives.
 
 ## 🎨 About the Artist
 
@@ -14,10 +14,10 @@ Visit the portfolio at: [https://niklasdorsch3.github.io](https://niklasdorsch3.
 
 ```
 niklasdorsch3.github.io/
-├── index.html          # Homepage
-├── portfolio.html      # Artwork gallery
-├── about.html         # Artist statement & biography
-├── contact.html       # Contact information
+├── index.html          # Single-page homepage with all content
+├── abstracts.html      # Abstract Landscapes collection
+├── figures.html        # Figures & Forms collection
+├── studies.html        # Studies collection
 ├── css/
 │   └── style.css      # Main stylesheet
 ├── js/
@@ -30,12 +30,13 @@ niklasdorsch3.github.io/
 
 ## ✨ Features
 
+- **Single-Page Design**: All content organized on one scrollable homepage
+- **Collections Structure**: Three curated collections (Abstract Landscapes, Figures & Forms, Studies)
+- **Minimal Typography**: Clean, elegant fonts with optimal readability
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
-- **Image Gallery**: Interactive lightbox with keyboard navigation
+- **Interactive Gallery**: Lightbox with keyboard navigation on collection pages
 - **SEO Optimized**: Meta tags and semantic HTML for search engines
 - **Accessibility**: Alt tags, proper heading structure, and keyboard navigation
-- **Contact Form**: Integrated with Formspree for form submissions
-- **Clean Design**: Minimal aesthetic that showcases artwork effectively
 
 ## 🛠️ Setup Instructions
 
@@ -60,24 +61,17 @@ Replace the placeholder images in `/images/artworks/` with actual artwork:
 
 **Image specifications:**
 - Format: JPG, PNG, or WebP
-- Recommended size: 1200x1200px for square format
+- Recommended size: 1000x1250px (4:5 aspect ratio)
 - File size: Optimize for web (under 500KB each)
 
 ### 3. Add Profile Photo
 Add artist profile photo to `/images/profile/artist-photo.jpg`
 
-### 4. Setup Contact Form
-1. Sign up for a free [Formspree](https://formspree.io) account
-2. Create a new form and get your form ID
-3. Replace `YOUR_FORM_ID` in `contact.html` with your actual Formspree form ID:
-   ```html
-   <form action="https://formspree.io/f/YOUR_ACTUAL_FORM_ID" method="POST">
-   ```
-
-### 5. Customize Content (Optional)
-- Update artist statement in `about.html`
-- Modify contact information in `contact.html`
-- Add artwork details (dimensions, years) in `portfolio.html`
+### 4. Customize Content (Optional)
+- Update artist statement in `index.html` (About section)
+- Modify contact information in `index.html` (Contact section)
+- Add artwork details (dimensions, years) in collection pages
+- Organize artworks into appropriate collections
 
 ## 🔧 Technical Details
 
@@ -100,21 +94,32 @@ Add artist profile photo to `/images/profile/artist-photo.jpg`
 - Minimal dependencies
 - Fast loading times
 
+## 🎨 Design Philosophy
+
+The website follows a minimal, gallery-inspired aesthetic:
+- **Single-page layout** keeps focus on the artwork
+- **Collections structure** organizes work thematically
+- **Minimal typography** with clean, readable fonts
+- **Generous whitespace** lets artwork breathe
+- **Subtle interactions** enhance user experience without distraction
+
 ## 📱 Mobile Optimization
 
-The website is fully responsive with:
-- Hamburger navigation menu
-- Touch-friendly gallery
-- Optimized typography scaling
-- Mobile-first design approach
+Fully responsive design features:
+- Hamburger navigation menu for mobile
+- Touch-friendly gallery interactions
+- Optimized typography scaling across devices
+- Single-column layout on mobile for better readability
+- Fast loading with optimized images
 
 ## 🎯 SEO Features
 
-- Meta descriptions and keywords
-- Open Graph tags for social sharing
-- Semantic HTML structure
+- Meta descriptions and keywords for each page
+- Open Graph tags for social media sharing
+- Semantic HTML5 structure
 - Alt tags for all images
 - Proper heading hierarchy
+- Clean URLs and navigation structure
 
 ## 📞 Support
 
