@@ -14,29 +14,39 @@ Visit the portfolio at: [https://niklasdorsch3.github.io](https://niklasdorsch3.
 
 ```
 niklasdorsch3.github.io/
-├── index.html          # Single-page homepage with all content
-├── abstracts.html      # Abstract Landscapes collection
-├── figures.html        # Figures & Forms collection
-├── studies.html        # Studies collection
+├── index.html              # Single-page homepage
+├── abstracts.html          # Abstract Landscapes collection
+├── figures.html            # Figures & Forms collection  
+├── studies.html            # Studies collection
+├── components/             # Reusable HTML components
+│   ├── head.html          #   Meta tags and fonts
+│   ├── header.html        #   Navigation
+│   ├── footer.html        #   Footer
+│   └── lightbox.html      #   Gallery lightbox
+├── data/
+│   └── artworks.json      # Artwork and collection data
 ├── css/
-│   └── style.css      # Main stylesheet
+│   └── style.css          # Main stylesheet
 ├── js/
-│   └── script.js      # JavaScript functionality
+│   └── components.js      # Component loader and gallery system
 ├── images/
-│   ├── artworks/      # Portfolio artwork images
-│   └── profile/       # Artist profile photo
-└── README.md          # This file
+│   ├── artworks/          # Portfolio artwork images
+│   └── profile/           # Artist profile photo
+├── HOW-TO-ADD-ARTWORK.md  # Tutorial for adding new pieces
+└── README.md              # This file
 ```
 
 ## ✨ Features
 
-- **Single-Page Design**: All content organized on one scrollable homepage
+- **Component-Based Architecture**: Zero code repetition with shared HTML components
+- **Data-Driven Artwork Management**: Add artwork via JSON without touching HTML
+- **Single-Page Design**: All content organized on one scrollable homepage  
 - **Collections Structure**: Three curated collections (Abstract Landscapes, Figures & Forms, Studies)
 - **Minimal Typography**: Clean, elegant fonts with optimal readability
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices
 - **Interactive Gallery**: Lightbox with keyboard navigation on collection pages
 - **SEO Optimized**: Meta tags and semantic HTML for search engines
-- **Accessibility**: Alt tags, proper heading structure, and keyboard navigation
+- **Easy Maintenance**: Update navigation/footer once, changes everywhere
 
 ## 🛠️ Setup Instructions
 
@@ -47,31 +57,21 @@ niklasdorsch3.github.io/
 4. Set source to main branch
 
 ### 2. Add Artwork Images
-Replace the placeholder images in `/images/artworks/` with actual artwork:
+Replace the placeholder images in `/images/artworks/` with actual artwork files.
 
-**Required artwork files:**
-- `placeholder-1.jpg` → Still life 1
-- `placeholder-2.jpg` → The Foot  
-- `placeholder-3.jpg` → Nude Woman (Oil on Gesso board 12 x 12)
-- `placeholder-4.jpg` → Figure 1 (Beserker)
-- `placeholder-5.jpg` → Falling Scene
-- `placeholder-6.jpg` → Bethesda Fountain
-- `placeholder-7.jpg` → Bar Scene
-- `placeholder-8.jpg` → Wedding flower
+### 3. Update Artwork Data
+Edit `/data/artworks.json` to match your actual artworks:
+- Update artwork titles, media, dimensions, and years
+- Organize pieces into collections as desired
+- See `HOW-TO-ADD-ARTWORK.md` for detailed instructions
 
-**Image specifications:**
-- Format: JPG, PNG, or WebP
-- Recommended size: 1000x1250px (4:5 aspect ratio)
-- File size: Optimize for web (under 500KB each)
-
-### 3. Add Profile Photo
+### 4. Add Profile Photo
 Add artist profile photo to `/images/profile/artist-photo.jpg`
 
-### 4. Customize Content (Optional)
-- Update artist statement in `index.html` (About section)
+### 5. Customize Content (Optional)
+- Update artist statement in `index.html` (About section)  
 - Modify contact information in `index.html` (Contact section)
-- Add artwork details (dimensions, years) in collection pages
-- Organize artworks into appropriate collections
+- Adjust collection descriptions in `data/artworks.json`
 
 ## 🔧 Technical Details
 

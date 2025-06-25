@@ -1,0 +1,81 @@
+{
+  "artworks": {
+    "still-life-1": {
+      "title": "Still life 1",
+      "medium": "Oil on Canvas",
+      "year": "2024",
+      "filename": "placeholder-1.jpg",
+      "description": "A contemplative exploration of form and shadow"
+    },
+    "the-foot": {
+      "title": "The Foot",
+      "medium": "Oil on Canvas",
+      "year": "2024",
+      "filename": "placeholder-2.jpg",
+      "description": "Anatomical study exploring human form through expressive brushwork"
+    },
+    "nude-woman": {
+      "title": "Nude Woman",
+      "medium": "Oil on Gesso board",
+      "dimensions": "12 x 12",
+      "year": "2024",
+      "filename": "placeholder-3.jpg",
+      "description": "Intimate figurative study on small-scale gesso board"
+    },
+    "figure-1-beserker": {
+      "title": "Figure 1 (Beserker)",
+      "medium": "Oil on Canvas",
+      "year": "2024",
+      "filename": "placeholder-4.jpg",
+      "description": "Mythical figure inspired by German folklore and ancient narratives"
+    },
+    "falling-scene": {
+      "title": "Falling Scene",
+      "medium": "Oil on Canvas",
+      "year": "2024",
+      "filename": "placeholder-5.jpg",
+      "description": "Abstract landscape capturing motion and emotional descent"
+    },
+    "bethesda-fountain": {
+      "title": "Bethesda Fountain",
+      "medium": "Oil on Canvas",
+      "year": "2024",
+      "filename": "placeholder-6.jpg",
+      "description": "Urban landscape interpretation of Central Park's iconic fountain"
+    },
+    "bar-scene": {
+      "title": "Bar Scene",
+      "medium": "Oil on Canvas",
+      "year": "2024",
+      "filename": "placeholder-7.jpg",
+      "description": "Social scene capturing atmosphere and human interaction"
+    },
+    "wedding-flower": {
+      "title": "Wedding flower",
+      "medium": "Oil on Canvas",
+      "year": "2024",
+      "filename": "placeholder-8.jpg",
+      "description": "Floral study with emotional resonance and symbolic meaning"
+    }
+  },
+  "collections": {
+    "abstracts": {
+      "title": "Abstract Landscapes",
+      "description": "Exploring mythical narratives through organic forms and abstract backgrounds",
+      "artworks": ["still-life-1", "falling-scene", "bethesda-fountain", "wedding-flower"]
+    },
+    "figures": {
+      "title": "Figures & Forms",
+      "description": "Exploring human forms through expressive painting techniques",
+      "artworks": ["the-foot", "figure-1-beserker", "bar-scene"]
+    },
+    "studies": {
+      "title": "Studies",
+      "description": "Experimental works exploring technique and form",
+      "artworks": ["nude-woman", "still-life-1", "the-foot", "figure-1-beserker"]
+    }
+  },
+  "homepage": {
+    "collections": ["abstracts", "figures", "studies"]
+  }
+}

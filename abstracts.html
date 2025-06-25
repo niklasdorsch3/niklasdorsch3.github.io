@@ -1,47 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Abstract Landscapes collection by Niklas Dorsch - Contemporary artist exploring mythical narratives">
-    <meta property="og:title" content="Abstract Landscapes - Niklas Dorsch">
-    <meta property="og:description" content="Abstract landscapes inspired by mythical narratives and German fairytales">
-    
-    <title>Abstract Landscapes - Niklas Dorsch</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+<head id="head-content">
+    <!-- Head content will be loaded dynamically -->
 </head>
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="nav-logo">
-                    <a href="index.html">ND</a>
-                </div>
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        <a href="index.html#home" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="index.html#collections" class="nav-link">Collections</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="index.html#about" class="nav-link">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="index.html#contact" class="nav-link">Contact</a>
-                    </li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </div>
-        </nav>
-    </header>
+<body data-title="Abstract Landscapes - Niklas Dorsch" 
+      data-description="Abstract landscapes inspired by mythical narratives and German fairytales" 
+      data-page="collections"
+      data-collection="abstracts">
+    
+    <div id="header-content">
+        <!-- Header content will be loaded dynamically -->
+    </div>
 
     <main>
         <section class="page-header">
@@ -53,65 +22,21 @@
 
         <section class="portfolio-gallery">
             <div class="container">
-                <div class="gallery-grid">
-                    <div class="gallery-item" data-title="Still life 1" data-medium="Oil on Canvas" data-year="2024">
-                        <img src="images/artworks/placeholder-1.jpg" alt="Still life 1" loading="lazy">
-                        <div class="gallery-overlay">
-                            <h3>Still life 1</h3>
-                            <p>Oil on Canvas</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item" data-title="Falling Scene" data-medium="Oil on Canvas" data-year="2024">
-                        <img src="images/artworks/placeholder-5.jpg" alt="Falling Scene" loading="lazy">
-                        <div class="gallery-overlay">
-                            <h3>Falling Scene</h3>
-                            <p>Oil on Canvas</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item" data-title="Bethesda Fountain" data-medium="Oil on Canvas" data-year="2024">
-                        <img src="images/artworks/placeholder-6.jpg" alt="Bethesda Fountain" loading="lazy">
-                        <div class="gallery-overlay">
-                            <h3>Bethesda Fountain</h3>
-                            <p>Oil on Canvas</p>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item" data-title="Wedding flower" data-medium="Oil on Canvas" data-year="2024">
-                        <img src="images/artworks/placeholder-8.jpg" alt="Wedding flower" loading="lazy">
-                        <div class="gallery-overlay">
-                            <h3>Wedding flower</h3>
-                            <p>Oil on Canvas</p>
-                        </div>
-                    </div>
+                <div class="gallery-grid" id="gallery-grid">
+                    <!-- Gallery will be loaded dynamically -->
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox">
-        <div class="lightbox-content">
-            <span class="lightbox-close">&times;</span>
-            <img id="lightbox-image" src="" alt="">
-            <div class="lightbox-info">
-                <h3 id="lightbox-title"></h3>
-                <p id="lightbox-details"></p>
-            </div>
-            <div class="lightbox-nav">
-                <button id="lightbox-prev" class="lightbox-btn">&#8249;</button>
-                <button id="lightbox-next" class="lightbox-btn">&#8250;</button>
-            </div>
-        </div>
+    <div id="lightbox-content">
+        <!-- Lightbox will be loaded dynamically -->
     </div>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Niklas Dorsch. All rights reserved.</p>
-        </div>
-    </footer>
+    <div id="footer-content">
+        <!-- Footer content will be loaded dynamically -->
+    </div>
 
-    <script src="js/script.js"></script>
+    <script src="js/components.js"></script>
 </body>
 </html>
