@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Images</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .test-image { 
+            width: 200px; 
+            height: 200px; 
+            border: 2px solid red; 
+            margin: 10px;
+            object-fit: cover;
+        }
+        .debug-info { 
+            background: #f0f0f0; 
+            padding: 10px; 
+            margin: 10px; 
+            border-radius: 5px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Debug Test</h1>
+    
+    <div class="debug-info">
+        <h3>Testing Direct Image Paths:</h3>
+        
+        <h4>1. Nude 1 (nude_1.jpeg):</h4>
+        <img src="images/artworks/nude_1.jpeg" alt="Nude 1" class="test-image">
+        
+        <h4>2. Placeholder 2 (placeholder-2.jpg):</h4>
+        <img src="images/artworks/placeholder-2.jpg" alt="Placeholder 2" class="test-image">
+        
+        <h4>3. Test if images exist:</h4>
+        <p>If you see red borders with no images, the files aren't loading.</p>
+        <p>If you see images, then the CSS might be the issue.</p>
+    </div>
+
+    <div class="debug-info">
+        <h3>Testing Collection Grid CSS:</h3>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 900px;">
+            <div style="text-align: center;">
+                <div style="aspect-ratio: 4/5; overflow: hidden; margin-bottom: 1rem; border-radius: 3px; border: 2px solid #2d5a3d;">
+                    <img src="images/artworks/nude_1.jpeg" alt="Nude 1" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h3>Nude 1</h3>
+                <p>Oil on Canvas</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check if images load
+        document.querySelectorAll('img').forEach((img, index) => {
+            img.onload = () => {
+                console.log(`Image ${index + 1} loaded successfully:`, img.src);
+            };
+            img.onerror = () => {
+                console.error(`Image ${index + 1} failed to load:`, img.src);
+            };
+        });
+    </script>
+</body>
+</html>
