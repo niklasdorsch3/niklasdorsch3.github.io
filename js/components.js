@@ -8,13 +8,8 @@ class ComponentLoader {
     // Load artwork data
     async loadArtworkData() {
         if (!this.artworkData) {
-            try {
-                const response = await fetch('data/artworks.json');
-                this.artworkData = await response.json();
-            } catch (error) {
-                console.warn('Error loading artwork data (CORS issue in local development):', error);
-                this.artworkData = this.getFallbackArtworkData();
-            }
+            const response = await fetch('data/artworks.json');
+            this.artworkData = await response.json();
         }
         return this.artworkData;
     }
@@ -22,172 +17,10 @@ class ComponentLoader {
     // Load a component HTML file
     async loadComponent(name) {
         if (!this.components[name]) {
-            try {
-                const response = await fetch(`components/${name}.html`);
-                this.components[name] = await response.text();
-            } catch (error) {
-                console.warn(`Error loading component ${name} (CORS issue in local development):`, error);
-                this.components[name] = this.getFallbackComponent(name);
-            }
+            const response = await fetch(`components/${name}.html`);
+            this.components[name] = await response.text();
         }
         return this.components[name];
-    }
-
-    // Fallback artwork data for local development
-    getFallbackArtworkData() {
-        return {
-            "artworks": {
-                "nude-1": {
-                    "title": "Nude 1",
-                    "medium": "Oil on Canvas",
-                    "year": "2024",
-                    "filename": "nude_1.jpeg",
-                    "description": "A study from class at NYSS"
-                },
-                "the-foot": {
-                    "title": "The Foot",
-                    "medium": "Oil on Canvas",
-                    "year": "2024",
-                    "filename": "placeholder-2.jpg",
-                    "description": "Anatomical study exploring human form through expressive brushwork"
-                },
-                "nude-woman": {
-                    "title": "Nude Woman",
-                    "medium": "Oil on Gesso board",
-                    "dimensions": "12 x 12",
-                    "year": "2024",
-                    "filename": "placeholder-3.jpg",
-                    "description": "Intimate figurative study on small-scale gesso board"
-                },
-                "figure-1-beserker": {
-                    "title": "Figure 1 (Beserker)",
-                    "medium": "Oil on Canvas",
-                    "year": "2024",
-                    "filename": "placeholder-4.jpg",
-                    "description": "Mythical figure inspired by German folklore and ancient narratives"
-                },
-                "falling-scene": {
-                    "title": "Falling Scene",
-                    "medium": "Oil on Canvas",
-                    "year": "2024",
-                    "filename": "placeholder-5.jpg",
-                    "description": "Abstract landscape capturing motion and emotional descent"
-                },
-                "bethesda-fountain": {
-                    "title": "Bethesda Fountain",
-                    "medium": "Oil on Canvas",
-                    "year": "2024",
-                    "filename": "placeholder-6.jpg",
-                    "description": "Urban landscape interpretation of Central Park's iconic fountain"
-                },
-                "bar-scene": {
-                    "title": "Bar Scene",
-                    "medium": "Oil on Canvas",
-                    "year": "2024",
-                    "filename": "placeholder-7.jpg",
-                    "description": "Social scene capturing atmosphere and human interaction"
-                },
-                "wedding-flower": {
-                    "title": "Wedding flower",
-                    "medium": "Oil on Canvas",
-                    "year": "2024",
-                    "filename": "placeholder-8.jpg",
-                    "description": "Floral study with emotional resonance and symbolic meaning"
-                }
-            },
-            "collections": {
-                "abstracts": {
-                    "title": "Abstract Landscapes",
-                    "description": "Exploring mythical narratives through organic forms and abstract backgrounds",
-                    "artworks": ["nude-1", "falling-scene", "bethesda-fountain", "wedding-flower"]
-                },
-                "figures": {
-                    "title": "Figures & Forms",
-                    "description": "Exploring human forms through expressive painting techniques",
-                    "artworks": ["the-foot", "figure-1-beserker", "bar-scene"]
-                },
-                "studies": {
-                    "title": "Studies",
-                    "description": "Experimental works exploring technique and form",
-                    "artworks": ["nude-woman", "nude-1", "the-foot", "figure-1-beserker"]
-                }
-            },
-            "homepage": {
-                "collections": ["abstracts", "figures", "studies"]
-            }
-        };
-    }
-
-    // Fallback HTML components for local development
-    getFallbackComponent(name) {
-        const components = {
-            'head': `<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="{{description}}">
-<meta name="keywords" content="Niklas Dorsch, artist, painting, abstract art, contemporary art, NYC artist">
-<meta property="og:title" content="{{title}}">
-<meta property="og:description" content="{{description}}">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://niklasdorsch3.github.io">
-
-<title>{{title}}</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">`,
-
-            'header': `<header>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">ND</a>
-            </div>
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="index.html#home" class="nav-link" data-page="home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#collections" class="nav-link" data-page="collections">Collections</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#about" class="nav-link" data-page="about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="index.html#contact" class="nav-link" data-page="contact">Contact</a>
-                </li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
-</header>`,
-
-            'footer': `<footer>
-    <div class="container">
-        <p>&copy; 2025 Niklas Dorsch. All rights reserved.</p>
-    </div>
-</footer>`,
-
-            'lightbox': `<div id="lightbox" class="lightbox">
-    <div class="lightbox-content">
-        <span class="lightbox-close">&times;</span>
-        <img id="lightbox-image" src="" alt="">
-        <div class="lightbox-info">
-            <h3 id="lightbox-title"></h3>
-            <p id="lightbox-details"></p>
-        </div>
-        <div class="lightbox-nav">
-            <button id="lightbox-prev" class="lightbox-btn">&#8249;</button>
-            <button id="lightbox-next" class="lightbox-btn">&#8250;</button>
-        </div>
-    </div>
-</div>`
-        };
-
-        return components[name] || '';
     }
 
     // Replace template variables in HTML
