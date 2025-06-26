@@ -13,7 +13,6 @@ class ComponentLoader {
                 this.artworkData = await response.json();
             } catch (error) {
                 console.warn('Error loading artwork data (CORS issue in local development):', error);
-                // Fallback data for local development
                 this.artworkData = this.getFallbackArtworkData();
             }
         }
@@ -168,12 +167,11 @@ class ComponentLoader {
 
             'footer': `<footer>
     <div class="container">
-        <p>&copy; 2024 Niklas Dorsch. All rights reserved.</p>
+        <p>&copy; 2025 Niklas Dorsch. All rights reserved.</p>
     </div>
 </footer>`,
 
-            'lightbox': `<!-- Lightbox Modal -->
-<div id="lightbox" class="lightbox">
+            'lightbox': `<div id="lightbox" class="lightbox">
     <div class="lightbox-content">
         <span class="lightbox-close">&times;</span>
         <img id="lightbox-image" src="" alt="">
@@ -214,7 +212,6 @@ class ComponentLoader {
 
     // Set active navigation item
     setActiveNavigation(activePage) {
-        // Wait for navigation to be loaded
         setTimeout(() => {
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => {
@@ -233,15 +230,12 @@ class ComponentLoader {
         if (!data) return '';
 
         const collections = data.homepage.collections;
-        let html = '';
-
-        collections.forEach(collectionKey => {
+        return collections.map(collectionKey => {
             const collection = data.collections[collectionKey];
-            const firstArtworkKey = collection.artworks[0];
-            const firstArtwork = data.artworks[firstArtworkKey];
+            const firstArtwork = data.artworks[collection.artworks[0]];
             const artworkCount = collection.artworks.length;
 
-            html += `
+            return `
                 <div class="collection-item">
                     <a href="${collectionKey}.html">
                         <div class="collection-image">
@@ -252,9 +246,7 @@ class ComponentLoader {
                     </a>
                 </div>
             `;
-        });
-
-        return html;
+        }).join('');
     }
 
     // Generate gallery for collection pages
@@ -263,16 +255,14 @@ class ComponentLoader {
         if (!data || !data.collections[collectionKey]) return '';
 
         const collection = data.collections[collectionKey];
-        let html = '';
-
-        collection.artworks.forEach(artworkKey => {
+        return collection.artworks.map(artworkKey => {
             const artwork = data.artworks[artworkKey];
-            if (!artwork) return;
+            if (!artwork) return '';
 
             const dimensions = artwork.dimensions ? `, ${artwork.dimensions}` : '';
             const year = artwork.year ? `, ${artwork.year}` : '';
 
-            html += `
+            return `
                 <div class="gallery-item" 
                      data-title="${artwork.title}" 
                      data-medium="${artwork.medium}" 
@@ -285,9 +275,7 @@ class ComponentLoader {
                     </div>
                 </div>
             `;
-        });
-
-        return html;
+        }).join('');
     }
 
     // Get collection info
@@ -302,24 +290,14 @@ const componentLoader = new ComponentLoader();
 
 // Initialize components when DOM is loaded
 document.addEventListener('DOMContentLoaded', async () => {
-    // Get page configuration from body data attributes
     const pageTitle = document.body.getAttribute('data-title') || 'Niklas Dorsch - Artist Portfolio';
     const pageDescription = document.body.getAttribute('data-description') || 'Contemporary artist exploring abstract landscapes through mythical narratives';
     const activePage = document.body.getAttribute('data-page') || 'home';
 
-    // Load head component
-    await componentLoader.injectComponent('head-content', 'head', {
-        title: pageTitle,
-        description: pageDescription
-    });
-
-    // Load header component
+    // Load components
+    await componentLoader.injectComponent('head-content', 'head', { title: pageTitle, description: pageDescription });
     await componentLoader.injectComponent('header-content', 'header');
-    
-    // Set active navigation
     componentLoader.setActiveNavigation(activePage);
-
-    // Load footer component
     await componentLoader.injectComponent('footer-content', 'footer');
 
     // Load lightbox if element exists
@@ -331,8 +309,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Generate collections for homepage
     const collectionsGrid = document.getElementById('collections-grid');
     if (collectionsGrid) {
-        const collectionsHtml = await componentLoader.generateCollectionItems();
-        collectionsGrid.innerHTML = collectionsHtml;
+        collectionsGrid.innerHTML = await componentLoader.generateCollectionItems();
     }
 
     // Generate gallery for collection pages
@@ -340,8 +317,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (galleryGrid) {
         const collectionKey = document.body.getAttribute('data-collection');
         if (collectionKey) {
-            const galleryHtml = await componentLoader.generateGallery(collectionKey);
-            galleryGrid.innerHTML = galleryHtml;
+            galleryGrid.innerHTML = await componentLoader.generateGallery(collectionKey);
 
             // Update page header with collection info
             const collectionInfo = await componentLoader.getCollectionInfo(collectionKey);
@@ -354,7 +330,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    // Re-initialize mobile navigation and lightbox after components are loaded
+    // Initialize features after components are loaded
     setTimeout(() => {
         initializeMobileNavigation();
         initializeLightbox();
@@ -362,22 +338,23 @@ document.addEventListener('DOMContentLoaded', async () => {
     }, 100);
 });
 
-// Mobile navigation functionality
+// Mobile navigation
 function initializeMobileNavigation() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 
     if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
+        hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        }));
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
     }
 }
 
@@ -418,9 +395,7 @@ function initializeLightbox() {
     }
 
     lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) {
-            closeLightbox();
-        }
+        if (e.target === lightbox) closeLightbox();
     });
 
     // Navigation
@@ -466,12 +441,8 @@ function initializeLightbox() {
         lightboxTitle.textContent = title;
 
         let details = medium;
-        if (dimensions) {
-            details += `, ${dimensions}`;
-        }
-        if (year) {
-            details += `, ${year}`;
-        }
+        if (dimensions) details += `, ${dimensions}`;
+        if (year) details += `, ${year}`;
         lightboxDetails.textContent = details;
     }
 }
@@ -480,7 +451,6 @@ function initializeLightbox() {
 function initializeLazyLoading() {
     const images = document.querySelectorAll('img[loading="lazy"]');
     
-    // For images that are already loaded, add the loaded class immediately
     images.forEach(img => {
         if (img.complete && img.naturalWidth > 0) {
             img.classList.add('loaded');
@@ -491,7 +461,6 @@ function initializeLazyLoading() {
         }
     });
     
-    // Intersection Observer for lazy loading
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
