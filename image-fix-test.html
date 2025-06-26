@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Fix Test</title>
+    <style>
+        body { padding: 20px; font-family: Arial, sans-serif; }
+        
+        /* Test 1: Your current CSS */
+        .current-css .collection-image {
+            aspect-ratio: 4/5;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            border-radius: 3px;
+            border: 2px solid #2d5a3d;
+            transition: border-color 0.3s ease;
+        }
+        
+        .current-css .collection-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        /* Test 2: Fixed CSS with explicit height */
+        .fixed-css .collection-image {
+            width: 200px;
+            height: 250px; /* 4:5 ratio */
+            overflow: hidden;
+            margin-bottom: 1rem;
+            border-radius: 3px;
+            border: 2px solid red;
+            background-color: #f0f0f0; /* Show container */
+        }
+        
+        .fixed-css .collection-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Test 3: Simple display */
+        .simple img {
+            width: 200px;
+            height: auto;
+            border: 2px solid blue;
+        }
+        
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Loading Debug</h1>
+    
+    <div class="test-section">
+        <h2>Test 1: Current CSS (aspect-ratio)</h2>
+        <div class="current-css">
+            <div class="collection-image">
+                <img src="images/artworks/nude_1.jpeg" alt="Test" loading="lazy">
+            </div>
+        </div>
+        <p>Green border should contain image</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 2: Fixed CSS (explicit height)</h2>
+        <div class="fixed-css">
+            <div class="collection-image">
+                <img src="images/artworks/nude_1.jpeg" alt="Test" loading="lazy">
+            </div>
+        </div>
+        <p>Red border should contain image</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 3: Simple display</h2>
+        <div class="simple">
+            <img src="images/artworks/nude_1.jpeg" alt="Test">
+        </div>
+        <p>Blue border should show image</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>Test 4: Direct file check</h2>
+        <p><a href="images/artworks/nude_1.jpeg" target="_blank">Click to open image directly</a></p>
+    </div>
+
+    <script>
+        // Debug image loading
+        document.querySelectorAll('img').forEach((img, i) => {
+            console.log(`Setting up listeners for image ${i + 1}:`, img.src);
+            
+            img.onload = function() {
+                console.log(`✅ Image ${i + 1} loaded successfully:`, this.src);
+                console.log(`   Natural size: ${this.naturalWidth}x${this.naturalHeight}`);
+                console.log(`   Display size: ${this.width}x${this.height}`);
+            };
+            
+            img.onerror = function() {
+                console.error(`❌ Image ${i + 1} failed to load:`, this.src);
+            };
+            
+            // Force check if already loaded
+            if (img.complete) {
+                if (img.naturalWidth > 0) {
+                    console.log(`🔄 Image ${i + 1} already loaded:`, img.src);
+                } else {
+                    console.error(`🔄 Image ${i + 1} failed (already complete):`, img.src);
+                }
+            }
+        });
+        
+        // Check if image files actually exist
+        fetch('images/artworks/nude_1.jpeg')
+            .then(response => {
+                if (response.ok) {
+                    console.log('✅ Image file exists and is accessible');
+                } else {
+                    console.error('❌ Image file not accessible:', response.status);
+                }
+            })
+            .catch(err => {
+                console.error('❌ Fetch error:', err);
+            });
+    </script>
+</body>
+</html>

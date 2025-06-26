@@ -265,11 +265,13 @@ a:hover {
 
 .collection-image {
     aspect-ratio: 4/5;
+    min-height: 250px; /* Fallback for browsers that don't support aspect-ratio */
     overflow: hidden;
     margin-bottom: 1rem;
     border-radius: 3px;
     border: 2px solid transparent;
     transition: border-color 0.3s ease;
+    background-color: #f5f5f5; /* Show container background */
 }
 
 .collection-item:hover .collection-image {
@@ -281,6 +283,8 @@ a:hover {
     height: 100%;
     object-fit: cover;
     transition: transform 0.4s ease;
+    display: block; /* Ensure images display as blocks */
+    background-color: #eee; /* Show while loading */
 }
 
 .collection-item:hover .collection-image img {
