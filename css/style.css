@@ -331,7 +331,7 @@ a:hover {
 .about-content {
     max-width: 700px;
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
     padding: 0 4px;
 }
 
@@ -370,7 +370,7 @@ a:hover {
 }
 
 .contact h2 {
-    margin-bottom: 0.3rem;
+    margin-bottom: 3rem;
     color: #222;
     font-weight: 400;
     font-size: 1.8rem;
@@ -389,7 +389,7 @@ a:hover {
 }
 
 .contact-content > p {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.05rem;
     color: #666;
     font-size: 1rem;
 }
@@ -550,7 +550,7 @@ a:hover {
 
 /* About Page */
 .about-content {
-    padding: 60px 0 100px;
+    padding: 10px 0 10px;
     background-color: white;
 }
 
@@ -570,6 +570,7 @@ a:hover {
 .about-text h2 {
     margin-bottom: 2rem;
     color: #222;
+    text-align: center;
 }
 
 .artist-statement p {
@@ -605,7 +606,7 @@ a:hover {
 
 /* Contact Page */
 .contact-content {
-    padding: 60px 0 100px;
+    padding: 10px 0 10px;
     background-color: white;
 }
 
