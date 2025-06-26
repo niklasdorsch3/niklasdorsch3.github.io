@@ -1,7 +1,7 @@
 {
   "artworks": {
-    "still-life-1": {
-      "title": "Nude1 1",
+    "nude-1": {
+      "title": "Nude 1",
       "medium": "Oil on Canvas",
       "year": "2024",
       "filename": "nude_1.jpg",
@@ -62,7 +62,7 @@
     "abstracts": {
       "title": "Abstract Landscapes",
       "description": "Exploring mythical narratives through organic forms and abstract backgrounds",
-      "artworks": ["still-life-1", "falling-scene", "bethesda-fountain", "wedding-flower"]
+      "artworks": ["nude-1", "falling-scene", "bethesda-fountain", "wedding-flower"]
     },
     "figures": {
       "title": "Figures & Forms",
