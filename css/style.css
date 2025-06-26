@@ -247,10 +247,15 @@ a:hover {
     gap: 2rem;
     max-width: 900px;
     margin: 0 auto;
+    min-height: 300px; /* Ensure grid has height */
+    border: 2px dashed #ccc; /* Debug: show grid container */
 }
 
 .collection-item {
     text-align: center;
+    min-height: 250px; /* Ensure items have height */
+    border: 1px solid #eee; /* Debug: show item containers */
+    padding: 10px;
 }
 
 .collection-item a {
@@ -265,13 +270,14 @@ a:hover {
 
 .collection-image {
     aspect-ratio: 4/5;
-    min-height: 250px; /* Fallback for browsers that don't support aspect-ratio */
+    min-height: 200px; /* Fallback for browsers that don't support aspect-ratio */
+    height: 200px; /* Force explicit height for debugging */
     overflow: hidden;
     margin-bottom: 1rem;
     border-radius: 3px;
-    border: 2px solid transparent;
+    border: 3px solid #ff0000; /* DEBUG: Red border to see containers */
     transition: border-color 0.3s ease;
-    background-color: #f5f5f5; /* Show container background */
+    background-color: #ffff00; /* DEBUG: Yellow background to see containers */
 }
 
 .collection-item:hover .collection-image {
