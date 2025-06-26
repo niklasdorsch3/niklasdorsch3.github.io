@@ -332,10 +332,11 @@ a:hover {
     max-width: 700px;
     margin: 0 auto;
     text-align: center;
+    padding: 0 4px;
 }
 
 .about h2 {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.2rem;
     color: #222;
     font-weight: 400;
     font-size: 1.8rem;
@@ -356,13 +357,13 @@ a:hover {
 .about-text p {
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.1rem;
     color: #555;
 }
 
 /* Contact Section */
 .contact {
-    padding: 20px 0 24px;
+    padding: 40px 0 50px;
     background-color: #f8f8f8;
     text-align: center;
     border-top: 2px solid #2d5a3d;
