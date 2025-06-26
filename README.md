@@ -73,6 +73,10 @@ Add artist profile photo to `/images/profile/artist-photo.jpg`
 - Modify contact information in `index.html` (Contact section)
 - Adjust collection descriptions in `data/artworks.json`
 
+### Local development
+
+TODO: Claude to fill in
+
 ## 🔧 Technical Details
 
 ### Built With

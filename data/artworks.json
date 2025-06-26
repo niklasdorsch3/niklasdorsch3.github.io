@@ -13,69 +13,21 @@
       "year": "2024",
       "filename": "still_life1.jpeg",
       "description": "Anatomical study exploring human form through expressive brushwork"
-    },
-    "nude-woman": {
-      "title": "Nude Woman",
-      "medium": "Oil on Gesso board",
-      "dimensions": "12 x 12",
-      "year": "2024",
-      "filename": "placeholder-3.jpg",
-      "description": "Intimate figurative study on small-scale gesso board"
-    },
-    "figure-1-beserker": {
-      "title": "Figure 1 (Beserker)",
-      "medium": "Oil on Canvas",
-      "year": "2024",
-      "filename": "placeholder-4.jpg",
-      "description": "Mythical figure inspired by German folklore and ancient narratives"
-    },
-    "falling-scene": {
-      "title": "Falling Scene",
-      "medium": "Oil on Canvas",
-      "year": "2024",
-      "filename": "placeholder-5.jpg",
-      "description": "Abstract landscape capturing motion and emotional descent"
-    },
-    "bethesda-fountain": {
-      "title": "Bethesda Fountain",
-      "medium": "Oil on Canvas",
-      "year": "2024",
-      "filename": "placeholder-6.jpg",
-      "description": "Urban landscape interpretation of Central Park's iconic fountain"
-    },
-    "bar-scene": {
-      "title": "Bar Scene",
-      "medium": "Oil on Canvas",
-      "year": "2024",
-      "filename": "placeholder-7.jpg",
-      "description": "Social scene capturing atmosphere and human interaction"
-    },
-    "wedding-flower": {
-      "title": "Wedding flower",
-      "medium": "Oil on Canvas",
-      "year": "2024",
-      "filename": "placeholder-8.jpg",
-      "description": "Floral study with emotional resonance and symbolic meaning"
     }
   },
   "collections": {
-    "abstracts": {
+    "collection_abstracts": {
       "title": "Studies from class",
       "description": "Created at the New York Studio school",
-      "artworks": ["nude-1", "still_life1", "wedding-flower"]
+      "artworks": ["nude-1", "still_life1"]
     },
-    "figures": {
+    "collection_summer_paitings": {
       "title": "Summer paintings",
-      "description": "Exploring human forms through expressive painting techniques",
-      "artworks": ["figure-1-beserker", "bar-scene"]
-    },
-    "studies": {
-      "title": "Studies",
-      "description": "Experimental works exploring technique and form",
-      "artworks": ["nude-woman", "still_life1", "figure-1-beserker"]
+      "description": "TODO",
+      "artworks": ["nude-1"]
     }
   },
   "homepage": {
-    "collections": ["abstracts", "figures", "studies"]
+    "collections": ["collection_abstracts", "collection_summer_paitings"]
   }
 }
