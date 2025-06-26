@@ -358,6 +358,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     setTimeout(() => {
         initializeMobileNavigation();
         initializeLightbox();
+        initializeLazyLoading();
     }, 100);
 });
 
@@ -473,4 +474,35 @@ function initializeLightbox() {
         }
         lightboxDetails.textContent = details;
     }
+}
+
+// Lazy loading functionality
+function initializeLazyLoading() {
+    const images = document.querySelectorAll('img[loading="lazy"]');
+    
+    // For images that are already loaded, add the loaded class immediately
+    images.forEach(img => {
+        if (img.complete && img.naturalWidth > 0) {
+            img.classList.add('loaded');
+        } else {
+            img.addEventListener('load', () => {
+                img.classList.add('loaded');
+            });
+        }
+    });
+    
+    // Intersection Observer for lazy loading
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.addEventListener('load', () => {
+                    img.classList.add('loaded');
+                });
+                observer.unobserve(img);
+            }
+        });
+    });
+
+    images.forEach(img => imageObserver.observe(img));
 }
