@@ -62,17 +62,17 @@
     "abstracts": {
       "title": "Studies from class",
       "description": "Created at the New York Studio school",
-      "artworks": ["nude-1", "still_life1", "the-foot", "wedding-flower"]
+      "artworks": ["nude-1", "still_life1", "wedding-flower"]
     },
     "figures": {
       "title": "Summer paintings",
       "description": "Exploring human forms through expressive painting techniques",
-      "artworks": ["the-foot", "figure-1-beserker", "bar-scene"]
+      "artworks": ["figure-1-beserker", "bar-scene"]
     },
     "studies": {
       "title": "Studies",
       "description": "Experimental works exploring technique and form",
-      "artworks": ["nude-woman", "still-life-1", "the-foot", "figure-1-beserker"]
+      "artworks": ["nude-woman", "still_life1", "figure-1-beserker"]
     }
   },
   "homepage": {
