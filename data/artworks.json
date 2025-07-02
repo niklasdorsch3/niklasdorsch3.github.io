@@ -18,16 +18,16 @@
   "collections": {
     "collection_abstracts": {
       "title": "Abstracts",
-      "description": "Absracts paintings blurb",
+      "description": "Abstracts paintings blurb",
       "artworks": ["nude-1", "still_life1"]
     },
-    "collection_summer_paitings": {
-      "title": "Summer paintings",
-      "description": "Paitings from going out with the art troupe in Summer 2024",
+    "collection_summer_paintings": {
+      "title": "Summer Paintings",
+      "description": "Paintings from going out with the art troupe in Summer 2024",
       "artworks": ["still_life1"]
     }
   },
   "homepage": {
-    "collections": ["collection_abstracts", "collection_summer_paitings"]
+    "collections": ["collection_abstracts", "collection_summer_paintings"]
   }
 }
