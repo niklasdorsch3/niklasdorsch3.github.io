@@ -17,8 +17,8 @@
   },
   "collections": {
     "collection_abstracts": {
-      "title": "Studies from class",
-      "description": "Created at the New York Studio school",
+      "title": "Abstracts",
+      "description": "Absracts paintings blurb",
       "artworks": ["nude-1", "still_life1"]
     },
     "collection_summer_paitings": {
