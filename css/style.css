@@ -67,6 +67,30 @@ a:hover {
     margin-right: 20px;
 }
 
+/* Artist Statement Section */
+.artist-statement-content {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-top: 1rem;
+}
+
+.statement-text {
+    flex: 2;
+}
+
+.statement-image {
+    flex: 1;
+    max-width: 300px;
+}
+
+.statement-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
 
 /* Navigation */
 .navbar {
@@ -632,6 +656,17 @@ footer p {
     .gallery-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 1rem;
+    }
+
+    /* Artist Statement Mobile Layout */
+    .artist-statement-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .statement-image {
+        max-width: 250px;
+        margin: 0 auto;
     }
 
 }
