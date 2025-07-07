@@ -222,6 +222,13 @@ function initializeLightbox() {
     function closeLightbox() {
         lightbox.style.display = 'none';
         document.body.style.overflow = 'auto';
+        
+        // Hide loading spinner when closing
+        const loadingElement = document.getElementById('lightbox-loading');
+        if (loadingElement) {
+            loadingElement.classList.add('hidden');
+        }
+        lightboxImage.classList.remove('loading');
     }
 
     if (lightboxClose) {
@@ -271,17 +278,54 @@ function initializeLightbox() {
         const year = item.dataset.year;
         const description = item.dataset.description;
 
-        // Use original high-resolution image for lightbox
-        const originalSrc = img.dataset.original || img.src;
-        lightboxImage.src = originalSrc;
-        lightboxImage.alt = img.alt;
+        // Update lightbox info immediately
         lightboxTitle.textContent = title;
-
         let details = medium;
         if (dimensions) details += `, ${dimensions}`;
         if (year) details += `, ${year}`;
         if (description) details += `\n\n${description}`;
         lightboxDetails.textContent = details;
+
+        // Get loading elements
+        const loadingElement = document.getElementById('lightbox-loading');
+        
+        // Show loading spinner
+        if (loadingElement) {
+            loadingElement.classList.remove('hidden');
+        }
+        lightboxImage.classList.add('loading');
+
+        // Load original high-resolution image
+        const originalSrc = img.dataset.original || img.src;
+        const tempImage = new Image();
+        
+        tempImage.onload = function() {
+            // Image loaded successfully - update lightbox
+            lightboxImage.src = originalSrc;
+            lightboxImage.alt = img.alt;
+            lightboxImage.classList.remove('loading');
+            
+            // Hide loading spinner
+            if (loadingElement) {
+                loadingElement.classList.add('hidden');
+            }
+        };
+        
+        tempImage.onerror = function() {
+            // Failed to load original - fallback to medium image
+            console.warn('Failed to load original image, using medium fallback:', originalSrc);
+            lightboxImage.src = img.src; // Use the medium image as fallback
+            lightboxImage.alt = img.alt;
+            lightboxImage.classList.remove('loading');
+            
+            // Hide loading spinner
+            if (loadingElement) {
+                loadingElement.classList.add('hidden');
+            }
+        };
+        
+        // Start loading the original image
+        tempImage.src = originalSrc;
 
         // Preload adjacent images for smoother navigation
         preloadAdjacentImages(index);

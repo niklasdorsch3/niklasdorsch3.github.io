@@ -492,6 +492,53 @@ a:hover {
     background: rgba(255,255,255,0.3);
 }
 
+/* Lightbox Image Container */
+.lightbox-image-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Lightbox Loading Spinner */
+.lightbox-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 8px;
+}
+
+.lightbox-loading.hidden {
+    display: none;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255,255,255,0.3);
+    border-top: 3px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Image Loading States */
+#lightbox-image {
+    transition: opacity 0.3s ease;
+}
+
+#lightbox-image.loading {
+    opacity: 0.5;
+}
+
 
 
 
