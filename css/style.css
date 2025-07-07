@@ -81,7 +81,6 @@ a:hover {
 
 .statement-image {
     flex: 1;
-    max-width: 300px;
 }
 
 .statement-image img {
@@ -665,7 +664,6 @@ footer p {
     }
 
     .statement-image {
-        max-width: 250px;
         margin: 0 auto;
     }
 
