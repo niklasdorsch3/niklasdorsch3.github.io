@@ -63,8 +63,8 @@ a:hover {
 .section {
     border-bottom: 2px solid #2d5a3d;
     padding: 20px 0;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 
@@ -349,14 +349,13 @@ a:hover {
 .portfolio-gallery {
     padding: 12px 10px 20px;
     background-color: white;
-    flex: 1;
-    max-width: 1200px;
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
     gap: 0.3rem;
+    justify-content: center;
 }
 
 .gallery-item {
@@ -513,8 +512,13 @@ footer p {
 
 /* Desktop centering for large screens */
 @media (min-width: 1240px) {
-    .portfolio-gallery {
-        margin: 0 auto;
+    .section.portfolio-gallery {
+        display: flex;
+        justify-content: center;
+    }
+    
+    .portfolio-gallery .gallery-grid {
+        max-width: 1200px;
     }
 }
 

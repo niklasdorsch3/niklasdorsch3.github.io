@@ -72,7 +72,7 @@ class ComponentLoader {
                 <div class="collection-item">
                     <a href="${collectionKey}.html">
                         <div class="collection-image">
-                            <img src="images/artworks/${firstArtwork.filename}" alt="${collection.title}" loading="lazy">
+                            <img src="images/artworks/medium/${firstArtwork.filename.replace(/\.[^.]+$/, '.jpg')}" alt="${collection.title}" loading="lazy">
                         </div>
                         <h3>${collection.title}</h3>
                         <p>${artworkCount} works</p>
@@ -102,7 +102,7 @@ class ComponentLoader {
                      data-dimensions="${(artwork.dimensions || '').replace(/"/g, '&quot;')}" 
                      data-year="${artwork.year}"
                      data-description="${artwork.description || ''}">
-                    <img src="images/artworks/${artwork.filename}" alt="${artwork.title}" loading="lazy">
+                    <img src="images/artworks/medium/${artwork.filename.replace(/\.[^.]+$/, '.jpg')}" alt="${artwork.title}" loading="lazy" data-original="images/artworks/originals/${artwork.filename}">
                     <div class="gallery-overlay">
                         <h3>${artwork.title}</h3>
                         <p>${artwork.medium}${dimensions}${year}</p>
@@ -125,7 +125,7 @@ const componentLoader = new ComponentLoader();
 // Initialize components when DOM is loaded
 document.addEventListener('DOMContentLoaded', async () => {
     const pageTitle = document.body.getAttribute('data-title') || 'Niklas Dorsch - Artist Portfolio';
-    const pageDescription = document.body.getAttribute('data-description') || 'Contemporary artist exploring abstract landscapes through mythical narratives';
+    const pageDescription = document.body.getAttribute('data-description') || 'Niklas Dorsch - Contemporary artist';
     const activePage = document.body.getAttribute('data-page') || 'home';
 
     // Load components
@@ -271,7 +271,9 @@ function initializeLightbox() {
         const year = item.dataset.year;
         const description = item.dataset.description;
 
-        lightboxImage.src = img.src;
+        // Use original high-resolution image for lightbox
+        const originalSrc = img.dataset.original || img.src;
+        lightboxImage.src = originalSrc;
         lightboxImage.alt = img.alt;
         lightboxTitle.textContent = title;
 
@@ -280,6 +282,26 @@ function initializeLightbox() {
         if (year) details += `, ${year}`;
         if (description) details += `\n\n${description}`;
         lightboxDetails.textContent = details;
+
+        // Preload adjacent images for smoother navigation
+        preloadAdjacentImages(index);
+    }
+
+    function preloadAdjacentImages(currentIndex) {
+        const preloadIndices = [
+            currentIndex - 1 >= 0 ? currentIndex - 1 : images.length - 1,
+            currentIndex + 1 < images.length ? currentIndex + 1 : 0
+        ];
+
+        preloadIndices.forEach(index => {
+            const item = images[index];
+            const img = item.querySelector('img');
+            const originalSrc = img.dataset.original || img.src;
+            
+            // Create new image element to preload
+            const preloadImg = new Image();
+            preloadImg.src = originalSrc;
+        });
     }
 }
 
