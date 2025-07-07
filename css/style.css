@@ -511,6 +511,13 @@ footer p {
 }
 
 
+/* Desktop centering for large screens */
+@media (min-width: 1240px) {
+    .portfolio-gallery {
+        margin: 0 auto;
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
