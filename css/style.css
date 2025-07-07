@@ -347,11 +347,10 @@ a:hover {
 
 /* Portfolio Gallery */
 .portfolio-gallery {
-    padding: 12px 4px 20px;
+    padding: 12px 10px 20px;
     background-color: white;
     flex: 1;
     max-width: 1200px;
-    margin: 0 auto;
 }
 
 .gallery-grid {
