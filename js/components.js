@@ -99,8 +99,9 @@ class ComponentLoader {
                 <div class="gallery-item" 
                      data-title="${artwork.title}" 
                      data-medium="${artwork.medium}" 
-                     data-dimensions="${artwork.dimensions || ''}" 
-                     data-year="${artwork.year}">
+                     data-dimensions="${(artwork.dimensions || '').replace(/"/g, '&quot;')}" 
+                     data-year="${artwork.year}"
+                     data-description="${artwork.description || ''}">
                     <img src="images/artworks/${artwork.filename}" alt="${artwork.title}" loading="lazy">
                     <div class="gallery-overlay">
                         <h3>${artwork.title}</h3>
@@ -268,6 +269,7 @@ function initializeLightbox() {
         const medium = item.dataset.medium;
         const dimensions = item.dataset.dimensions;
         const year = item.dataset.year;
+        const description = item.dataset.description;
 
         lightboxImage.src = img.src;
         lightboxImage.alt = img.alt;
@@ -276,6 +278,7 @@ function initializeLightbox() {
         let details = medium;
         if (dimensions) details += `, ${dimensions}`;
         if (year) details += `, ${year}`;
+        if (description) details += `\n\n${description}`;
         lightboxDetails.textContent = details;
     }
 }

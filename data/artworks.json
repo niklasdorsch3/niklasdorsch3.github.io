@@ -1,33 +1,152 @@
 {
   "artworks": {
-    "nude-1": {
-      "title": "Nude 1",
-      "medium": "Oil on Canvas",
-      "year": "2024",
-      "filename": "nude_1.jpeg",
-      "description": "A study from class at NYSS"
+    "nude": {
+      "title": "Nude",
+      "medium": "Oil on Board",
+      "year": "2023",
+      "dimensions": "10\" x 8\"",
+      "filename": "niklas_dorsch_nude.jpeg",
+      "description": "Figure study over 2 classes"
     },
-    "still_life1": {
-      "title": "Still Life 1",
+    "man_back": {
+      "title": "Man Back",
+      "medium": "Oil on Canvas Paper",
+      "year": "2023",
+      "dimensions": "10\" x 8\"",
+      "filename": "niklas_dorsch_man_back.jpeg",
+      "description": "Figure study from behind"
+    },
+    "man_goose": {
+      "title": "Man Goose",
+      "medium": "Oil on Canvas",
+      "year": "2023",
+      "dimensions": "10\" x 8\"",
+      "filename": "niklas_dorsch_ man_goose.jpeg",
+      "description": "Figure with goose. Goose was not in studio"
+    },
+    "baseball": {
+      "title": "Baseball",
+      "medium": "Acrylic on Canvas",
+      "year": "2019",
+      "dimensions": "10\" x 8\"",
+      "filename": "niklas_dorsch_ baseball.jpeg",
+      "description": "Figure shortly after throwing a baseball"
+    },
+    "skeli": {
+      "title": "Skeli",
+      "medium": "Oil on Canvas",
+      "year": "2023",
+      "dimensions": "10\" x 8\"",
+      "filename": "niklas_dorsch_skeli.jpeg",
+      "description": "Commissioned by friend who loves Skelis"
+    },
+    "sitting_woman": {
+      "title": "Sitting Woman",
       "medium": "Oil on Canvas",
       "year": "2024",
-      "filename": "still_life1.jpeg",
-      "description": "Anatomical study exploring human form through expressive brushwork"
+      "dimensions": "10\" x 8\"",
+      "filename": "niklas_dorsch_sitting-woman.jpeg",
+      "description": "Woman in seated pose"
+    },
+    "standing_woman": {
+      "title": "Standing Woman",
+      "medium": "Oil on Canvas",
+      "year": "2024",
+      "dimensions": "10\" x 8\"",
+      "filename": "niklas_dorsch_standing woman.jpeg",
+      "description": "Woman in standing pose, leaning over to tie her 'shoe'"
+    },
+    "man_sitting": {
+      "title": "Man Sitting",
+      "medium": "Oil on Canvas",
+      "year": "2024",
+      "dimensions": "10\" x 8\"",
+      "filename": "niklas_dorsch_ man_sitting.jpeg",
+      "description": "Man in seated pose"
+    },
+    "manhattan": {
+      "title": "Manhattan",
+      "medium": "Oil on Gesso Board",
+      "year": "2024",
+      "dimensions": "10\" x 8\"",
+      "filename": "niklas_dorsch_manhattan.jpeg",
+      "description": "Manhattan cityscape from Long Island City waterfront"
+    },
+    "still_life": {
+      "title": "Still Life",
+      "medium": "Oil on Canvas Board",
+      "year": "2024",
+      "dimensions": "10\" x 8\"",
+      "filename": "niklas_dorsch_still_life.jpeg",
+      "description": "Flowers in a vase in the summer time"
+    },
+    "poisoned_man": {
+      "title": "Poisoned Man",
+      "medium": "Oil on Gesso Board",
+      "year": "2024",
+      "dimensions": "10\" x 8\"",
+      "filename": "niklas_dorsch_poisoned_man.jpeg",
+      "description": "A nude man shortly after taking a dose of poison"
+    },
+    "foot": {
+      "title": "Foot",
+      "medium": "Oil on Gesso Board",
+      "year": "2025",
+      "dimensions": "10\" x 8\"",
+      "filename": "niklas_dorsch_foot.jpeg",
+      "description": "Study of foot and a man reading the newspaper"
+    },
+    "bethesda_fountain": {
+      "title": "Bethesda Fountain",
+      "medium": "Oil on Gesso Board",
+      "year": "2024",
+      "dimensions": "10\" x 8\"",
+      "filename": "niklas_dorsch_bethesda_fountain.jpeg",
+      "description": "Central Park landmark, improved in studio"
+    },
+    "falling_scene": {
+      "title": "Falling Scene",
+      "medium": "Oil on Gesso Board",
+      "year": "2025",
+      "dimensions": "10\" x 8\"",
+      "filename": "niklas_dorsch_falling_scene.jpeg",
+      "description": "The story of Eve"
+    },
+    "bar_scene": {
+      "title": "Bar Scene",
+      "medium": "Oil on Canvas",
+      "year": "2025",
+      "dimensions": "10\" x 8\"",
+      "filename": "niklas_dorsch_bar_scene.jpeg",
+      "description": "An angel visits a bar in the late afternoon"
+    },
+    "lake_landscape": {
+      "title": "Lake Landscape",
+      "medium": "Oil on Canvas Board",
+      "year": "2025",
+      "dimensions": "10\" x 8\"",
+      "filename": "niklas_dorsch_lake_landscape.jpeg",
+      "description": "Lake view from my grandmother's home"
     }
   },
   "collections": {
-    "collection_abstracts": {
-      "title": "Abstracts",
-      "description": "Abstracts paintings blurb",
-      "artworks": ["nude-1", "still_life1"]
+    "collection_studies_from_class": {
+      "title": "Studies from Class",
+      "description": "A collection of paintings created in class. In some instances the works were further developed after poses",
+      "artworks": ["poisoned_man", "nude", "man_back", "man_goose", "sitting_woman", "standing_woman", "man_sitting",  "foot"]
     },
-    "collection_summer_paintings": {
-      "title": "Summer Paintings",
-      "description": "Paintings from going out with the art troupe in Summer 2024",
-      "artworks": ["still_life1"]
+    "collection_landscapes": {
+      "title": "Landscapes",
+      "description": "Landscapes created in plein air. In some instances the works were further developed in the studio",
+      "artworks": ["bethesda_fountain", "manhattan", "lake_landscape"]
+    },
+    "collection_untitled": {
+      "title": "Miscellaneous Collection",
+      "description": "A collection of works exploring various themes and subjects",
+      "artworks": ["skeli",  "still_life",  "falling_scene", "bar_scene", "baseball"]
     }
   },
   "homepage": {
-    "collections": ["collection_abstracts", "collection_summer_paintings"]
+    "collections": ["collection_studies_from_class", "collection_landscapes", "collection_untitled"]
   }
 }
