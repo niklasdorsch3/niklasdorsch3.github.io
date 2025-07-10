@@ -698,6 +698,53 @@ footer p {
         grid-template-columns: 1fr;
     }
 
+    /* Mobile Gallery UX Improvements */
+    .gallery-item {
+        position: relative;
+        margin-bottom: 1rem;
+    }
+
+    .gallery-item::after {
+        content: "👆 Tap to view";
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: rgba(0,0,0,0.7);
+        color: white;
+        padding: 4px 8px;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        pointer-events: none;
+        z-index: 10;
+    }
+
+    .gallery-item:active {
+        transform: scale(0.98);
+        transition: transform 0.1s ease;
+    }
+
+    .gallery-overlay {
+        position: relative;
+        transform: translateY(0);
+        background: rgba(255,255,255,0.95);
+        color: #333;
+        padding: 1rem;
+        margin-top: -1px;
+        border-radius: 0 0 8px 8px;
+    }
+
+    .gallery-overlay h3 {
+        color: #222;
+        margin-bottom: 0.25rem;
+        font-size: 1.1rem;
+    }
+
+    .gallery-overlay p {
+        color: #666;
+        margin: 0;
+        font-size: 0.85rem;
+    }
+
     .lightbox-content {
         margin: 10% auto;
         max-width: 95%;
