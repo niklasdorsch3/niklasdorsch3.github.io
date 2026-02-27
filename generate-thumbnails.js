@@ -72,8 +72,8 @@ async function processImage(inputPath, outputPath, size, description) {
     try {
         await sharp(inputPath)
             .resize(size, size, {
-                fit: 'cover',
-                position: 'center'
+                fit: 'inside',
+                withoutEnlargement: true
             })
             .jpeg({
                 quality: JPEG_QUALITY,

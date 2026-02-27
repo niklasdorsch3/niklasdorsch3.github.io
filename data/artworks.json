@@ -131,7 +131,7 @@
   },
   "collections": {
     "collection_studies_from_class": {
-      "title": "Studies from Class",
+      "title": "Studio Studies",
       "description": "A collection of paintings created in class. In some instances the works were further developed after poses",
       "artworks": ["poisoned_man", "nude", "man_back", "man_goose", "sitting_woman", "standing_woman", "man_sitting",  "foot"]
     },
@@ -141,12 +141,12 @@
       "artworks": ["bethesda_fountain", "manhattan", "lake_landscape"]
     },
     "collection_untitled": {
-      "title": "Miscellaneous Collection",
+      "title": "Recent Work",
       "description": "A collection of works exploring various themes and subjects",
       "artworks": ["skeli",  "still_life",  "falling_scene", "bar_scene", "baseball"]
     }
   },
   "homepage": {
-    "collections": ["collection_studies_from_class", "collection_landscapes", "collection_untitled"]
+    "collections": ["collection_untitled", "collection_studies_from_class", "collection_landscapes"]
   }
 }

@@ -1,379 +1,331 @@
-// Component loader and template system
 class ComponentLoader {
     constructor() {
-        this.components = {};
-        this.artworkData = null;
+        this.cache = {};
     }
 
-    // Load artwork data
     async loadArtworkData() {
-        if (!this.artworkData) {
-            const response = await fetch('data/artworks.json');
-            this.artworkData = await response.json();
-        }
-        return this.artworkData;
+        if (this.cache.artworks) return this.cache.artworks;
+        const response = await fetch('data/artworks.json');
+        this.cache.artworks = await response.json();
+        return this.cache.artworks;
     }
 
-    // Load a component HTML file
     async loadComponent(name) {
-        if (!this.components[name]) {
-            const response = await fetch(`components/${name}.html`);
-            this.components[name] = await response.text();
-        }
-        return this.components[name];
+        if (this.cache[name]) return this.cache[name];
+        const response = await fetch(`components/${name}.html`);
+        this.cache[name] = await response.text();
+        return this.cache[name];
     }
 
-    // Replace template variables in HTML
-    processTemplate(html, data) {
-        return html.replace(/\{\{(\w+)\}\}/g, (match, key) => {
-            return data[key] || match;
-        });
-    }
-
-    // Inject component into element
-    async injectComponent(elementId, componentName, templateData = {}) {
+    async injectComponent(elementId, componentName) {
         const element = document.getElementById(elementId);
-        if (!element) {
-            console.error(`Element with id '${elementId}' not found`);
-            return;
-        }
-
-        const componentHtml = await this.loadComponent(componentName);
-        const processedHtml = this.processTemplate(componentHtml, templateData);
-        element.innerHTML = processedHtml;
+        if (!element) return;
+        const html = await this.loadComponent(componentName);
+        element.innerHTML = html;
     }
 
-    // Set active navigation item
-    setActiveNavigation(activePage) {
-        setTimeout(() => {
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('data-page') === activePage || 
-                    (activePage === 'home' && link.getAttribute('href').includes('#home'))) {
-                    link.classList.add('active');
-                }
-            });
-        }, 100);
-    }
+    // Generate all collection sections for the selected-works page
+    async generateSelectedWorks() {
+        const container = document.getElementById('works-content');
+        if (!container) return;
 
-    // Generate collection items for homepage
-    async generateCollectionItems() {
         const data = await this.loadArtworkData();
-        if (!data) return '';
+        const collectionKeys = data.homepage.collections;
 
-        const collections = data.homepage.collections;
-        return collections.map(collectionKey => {
-            const collection = data.collections[collectionKey];
-            const firstArtwork = data.artworks[collection.artworks[0]];
-            const artworkCount = collection.artworks.length;
+        let html = '';
+        for (const key of collectionKeys) {
+            const collection = data.collections[key];
+            const artworks = collection.artworks;
 
-            return `
-                <div class="collection-item">
-                    <a href="${collectionKey}.html">
-                        <div class="collection-image">
-                            <img src="images/artworks/medium/${firstArtwork.filename.replace(/\.[^.]+$/, '.jpg')}" alt="${collection.title}" loading="lazy">
-                        </div>
-                        <h3>${collection.title}</h3>
-                        <p>${artworkCount} works</p>
-                    </a>
-                </div>
-            `;
-        }).join('');
-    }
-
-    // Generate gallery for collection pages
-    async generateGallery(collectionKey) {
-        const data = await this.loadArtworkData();
-        if (!data || !data.collections[collectionKey]) return '';
-
-        const collection = data.collections[collectionKey];
-        return collection.artworks.map(artworkKey => {
-            const artwork = data.artworks[artworkKey];
-            if (!artwork) return '';
-
-            const dimensions = artwork.dimensions ? `, ${artwork.dimensions}` : '';
-            const year = artwork.year ? `, ${artwork.year}` : '';
-
-            return `
-                <div class="gallery-item" 
-                     data-title="${artwork.title}" 
-                     data-medium="${artwork.medium}" 
-                     data-dimensions="${(artwork.dimensions || '').replace(/"/g, '&quot;')}" 
-                     data-year="${artwork.year}"
-                     data-description="${artwork.description || ''}">
-                    <img src="images/artworks/medium/${artwork.filename.replace(/\.[^.]+$/, '.jpg')}" alt="${artwork.title}" loading="lazy" data-original="images/artworks/originals/${artwork.filename}">
-                    <div class="gallery-overlay">
-                        <h3>${artwork.title}</h3>
-                        <p>${artwork.medium}${dimensions}${year}</p>
-                    </div>
-                </div>
-            `;
-        }).join('');
-    }
-
-    // Get collection info
-    async getCollectionInfo(collectionKey) {
-        const data = await this.loadArtworkData();
-        return data?.collections[collectionKey] || null;
-    }
-}
-
-// Global instance
-const componentLoader = new ComponentLoader();
-
-// Initialize components when DOM is loaded
-document.addEventListener('DOMContentLoaded', async () => {
-    const pageTitle = document.body.getAttribute('data-title') || 'Niklas Dorsch - Artist Portfolio';
-    const pageDescription = document.body.getAttribute('data-description') || 'Niklas Dorsch - Contemporary artist';
-    const activePage = document.body.getAttribute('data-page') || 'home';
-
-    // Load components
-    await componentLoader.injectComponent('head-content', 'head', { title: pageTitle, description: pageDescription });
-    await componentLoader.injectComponent('header-content', 'header');
-    componentLoader.setActiveNavigation(activePage);
-    await componentLoader.injectComponent('footer-content', 'footer');
-
-    // Load lightbox if element exists
-    const lightboxContainer = document.getElementById('lightbox-content');
-    if (lightboxContainer) {
-        await componentLoader.injectComponent('lightbox-content', 'lightbox');
-    }
-
-    // Generate collections for homepage
-    const collectionsGrid = document.getElementById('collections-grid');
-    if (collectionsGrid) {
-        collectionsGrid.innerHTML = await componentLoader.generateCollectionItems();
-    }
-
-    // Generate gallery for collection pages
-    const galleryGrid = document.getElementById('gallery-grid');
-    if (galleryGrid) {
-        const collectionKey = document.body.getAttribute('data-collection');
-        if (collectionKey) {
-            galleryGrid.innerHTML = await componentLoader.generateGallery(collectionKey);
-
-            // Update page header with collection info
-            const collectionInfo = await componentLoader.getCollectionInfo(collectionKey);
-            if (collectionInfo) {
-                const pageHeader = document.querySelector('.page-header h1');
-                const pageSubtitle = document.querySelector('.page-header p');
-                if (pageHeader) pageHeader.textContent = collectionInfo.title;
-                if (pageSubtitle) pageSubtitle.textContent = collectionInfo.description;
+            let itemsHtml = '';
+            for (const artworkKey of artworks) {
+                const artwork = data.artworks[artworkKey];
+                if (!artwork) continue;
+                const mediumFilename = artwork.filename.replace(/\.jpeg$/i, '.jpg');
+                const mediumSrc = `images/artworks/medium/${mediumFilename}`;
+                const originalSrc = `images/artworks/originals/${artwork.filename}`;
+                itemsHtml += `
+                    <div class="gallery-item"
+                        data-title="${artwork.title}"
+                        data-medium="${artwork.medium || ''}"
+                        data-dimensions="${artwork.dimensions || ''}"
+                        data-year="${artwork.year || ''}"
+                        data-description="${artwork.description || ''}"
+                        data-src="${mediumSrc}"
+                        data-original="${originalSrc}">
+                        <img src="${mediumSrc}"
+                             alt="${artwork.title}"
+                             loading="lazy">
+                    </div>`;
             }
+
+            html += `
+                <section class="collection-section" id="${key}">
+                    <h2 class="collection-section-title">${collection.title}</h2>
+                    <div class="gallery-grid">${itemsHtml}</div>
+                </section>`;
         }
+
+        container.innerHTML = html;
     }
 
-    // Initialize features after components are loaded
-    setTimeout(() => {
-        initializeMobileNavigation();
-        initializeLightbox();
-        initializeLazyLoading();
-    }, 100);
-});
+    // Generate sub-nav links for the selected-works sidebar
+    async generateSubNav() {
+        const subNav = document.getElementById('sub-nav');
+        if (!subNav) return;
 
-// Mobile navigation
-function initializeMobileNavigation() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
+        const data = await this.loadArtworkData();
+        const collectionKeys = data.homepage.collections;
 
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
+        const html = collectionKeys.map(key => {
+            const col = data.collections[key];
+            return `<a href="#${key}" class="sub-nav-link" data-section="${key}">${col.title}</a>`;
+        }).join('');
 
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
+        subNav.innerHTML = html;
     }
 }
 
-// Lightbox functionality
-function initializeLightbox() {
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightbox-image');
-    const lightboxTitle = document.getElementById('lightbox-title');
-    const lightboxDetails = document.getElementById('lightbox-details');
-    const lightboxClose = document.querySelector('.lightbox-close');
-    const lightboxPrev = document.getElementById('lightbox-prev');
-    const lightboxNext = document.getElementById('lightbox-next');
+// =====================
+// Sidebar (hamburger on mobile)
+// =====================
 
-    if (!lightbox || galleryItems.length === 0) return;
+function initializeSidebar() {
+    const btn = document.getElementById('hamburger-btn');
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    if (!btn || !sidebar) return;
 
-    let currentImageIndex = 0;
-    const images = Array.from(galleryItems);
-
-    // Open lightbox
-    galleryItems.forEach((item, index) => {
-        item.addEventListener('click', () => {
-            currentImageIndex = index;
-            showImage(currentImageIndex);
-            lightbox.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        });
+    btn.addEventListener('click', () => {
+        sidebar.classList.toggle('open');
+        if (overlay) overlay.classList.toggle('visible');
     });
 
-    // Close lightbox
-    function closeLightbox() {
-        lightbox.style.display = 'none';
-        document.body.style.overflow = 'auto';
-        
-        // Hide loading spinner when closing
-        const loadingElement = document.getElementById('lightbox-loading');
-        if (loadingElement) {
-            loadingElement.classList.add('hidden');
-        }
-        lightboxImage.classList.remove('loading');
+    if (overlay) {
+        overlay.addEventListener('click', () => {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('visible');
+        });
     }
 
-    if (lightboxClose) {
-        lightboxClose.addEventListener('click', closeLightbox);
+    // Close sidebar on nav link click (mobile)
+    sidebar.addEventListener('click', (e) => {
+        if (e.target.classList.contains('nav-link') || e.target.classList.contains('sub-nav-link')) {
+            sidebar.classList.remove('open');
+            if (overlay) overlay.classList.remove('visible');
+        }
+    });
+}
+
+// =====================
+// Active nav link
+// =====================
+
+function setActiveNavLink() {
+    const page = document.body.dataset.page;
+    document.querySelectorAll('.nav-link').forEach(link => {
+        if (link.dataset.page === page) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// =====================
+// Scroll-spy for sub-nav
+// =====================
+
+function initializeScrollSpy() {
+    const sections = document.querySelectorAll('.collection-section');
+    const subNavLinks = document.querySelectorAll('.sub-nav-link');
+    if (!sections.length || !subNavLinks.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.id;
+                subNavLinks.forEach(link => {
+                    link.classList.toggle('active', link.dataset.section === id);
+                });
+            }
+        });
+    }, { threshold: 0.15, rootMargin: '-80px 0px -60% 0px' });
+
+    sections.forEach(section => observer.observe(section));
+}
+
+// =====================
+// Lightbox
+// =====================
+
+function initializeLightbox() {
+    const lightbox = document.getElementById('lightbox');
+    if (!lightbox) return;
+
+    const lightboxImage = document.getElementById('lightbox-image');
+    const lightboxLoading = document.getElementById('lightbox-loading');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxDetails = document.getElementById('lightbox-details');
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
+
+    let galleryItems = [];
+    let currentIndex = 0;
+
+    function getGalleryItems() {
+        return Array.from(document.querySelectorAll('.gallery-item'));
     }
+
+    function openLightbox(index) {
+        galleryItems = getGalleryItems();
+        currentIndex = index;
+        showImage(currentIndex);
+        lightbox.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
+    function showImage(index) {
+        const item = galleryItems[index];
+        if (!item) return;
+
+        const originalSrc = item.dataset.original;
+        const mediumSrc = item.dataset.src;
+        const title = item.dataset.title || '';
+        const medium = item.dataset.medium || '';
+        const dimensions = item.dataset.dimensions || '';
+        const year = item.dataset.year || '';
+        const description = item.dataset.description || '';
+
+        if (lightboxTitle) lightboxTitle.textContent = title;
+        if (lightboxDetails) {
+            const parts = [medium, dimensions, year].filter(Boolean).join(' · ');
+            lightboxDetails.textContent = description
+                ? `${parts}${parts ? ' — ' : ''}${description}`
+                : parts;
+        }
+
+        // Show loading, start with medium image
+        lightboxImage.classList.add('loading');
+        if (lightboxLoading) lightboxLoading.classList.remove('hidden');
+        lightboxImage.src = mediumSrc;
+
+        lightboxImage.onload = () => {
+            if (lightboxLoading) lightboxLoading.classList.add('hidden');
+            lightboxImage.classList.remove('loading');
+        };
+
+        // Preload original in background
+        if (originalSrc) {
+            const img = new Image();
+            img.onload = () => {
+                lightboxImage.src = originalSrc;
+                lightboxImage.classList.remove('loading');
+                if (lightboxLoading) lightboxLoading.classList.add('hidden');
+            };
+            img.onerror = () => {
+                lightboxImage.classList.remove('loading');
+                if (lightboxLoading) lightboxLoading.classList.add('hidden');
+            };
+            img.src = originalSrc;
+        }
+
+        // Preload adjacent images
+        [index - 1, index + 1].forEach(i => {
+            const adj = galleryItems[(i + galleryItems.length) % galleryItems.length];
+            if (adj) {
+                const preload = new Image();
+                preload.src = adj.dataset.original || adj.dataset.src;
+            }
+        });
+    }
+
+    function navigate(direction) {
+        galleryItems = getGalleryItems();
+        currentIndex = (currentIndex + direction + galleryItems.length) % galleryItems.length;
+        showImage(currentIndex);
+    }
+
+    // Click on gallery items
+    document.addEventListener('click', (e) => {
+        const item = e.target.closest('.gallery-item');
+        if (item) {
+            galleryItems = getGalleryItems();
+            const index = galleryItems.indexOf(item);
+            if (index !== -1) openLightbox(index);
+        }
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+    if (prevBtn) prevBtn.addEventListener('click', () => navigate(-1));
+    if (nextBtn) nextBtn.addEventListener('click', () => navigate(1));
 
     lightbox.addEventListener('click', (e) => {
         if (e.target === lightbox) closeLightbox();
     });
 
-    // Navigation
-    if (lightboxPrev) {
-        lightboxPrev.addEventListener('click', () => {
-            currentImageIndex = currentImageIndex > 0 ? currentImageIndex - 1 : images.length - 1;
-            showImage(currentImageIndex);
-        });
-    }
-
-    if (lightboxNext) {
-        lightboxNext.addEventListener('click', () => {
-            currentImageIndex = currentImageIndex < images.length - 1 ? currentImageIndex + 1 : 0;
-            showImage(currentImageIndex);
-        });
-    }
-
-    // Keyboard navigation
     document.addEventListener('keydown', (e) => {
-        if (lightbox.style.display === 'block') {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            } else if (e.key === 'ArrowLeft') {
-                currentImageIndex = currentImageIndex > 0 ? currentImageIndex - 1 : images.length - 1;
-                showImage(currentImageIndex);
-            } else if (e.key === 'ArrowRight') {
-                currentImageIndex = currentImageIndex < images.length - 1 ? currentImageIndex + 1 : 0;
-                showImage(currentImageIndex);
-            }
-        }
+        if (lightbox.style.display !== 'block') return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') navigate(-1);
+        if (e.key === 'ArrowRight') navigate(1);
     });
-
-    function showImage(index) {
-        const item = images[index];
-        const img = item.querySelector('img');
-        const title = item.dataset.title;
-        const medium = item.dataset.medium;
-        const dimensions = item.dataset.dimensions;
-        const year = item.dataset.year;
-        const description = item.dataset.description;
-
-        // Update lightbox info immediately
-        lightboxTitle.textContent = title;
-        let details = medium;
-        if (dimensions) details += `, ${dimensions}`;
-        if (year) details += `, ${year}`;
-        if (description) details += `\n\n${description}`;
-        lightboxDetails.textContent = details;
-
-        // Get loading elements
-        const loadingElement = document.getElementById('lightbox-loading');
-        
-        // Show loading spinner
-        if (loadingElement) {
-            loadingElement.classList.remove('hidden');
-        }
-        lightboxImage.classList.add('loading');
-
-        // Load original high-resolution image
-        const originalSrc = img.dataset.original || img.src;
-        const tempImage = new Image();
-        
-        tempImage.onload = function() {
-            // Image loaded successfully - update lightbox
-            lightboxImage.src = originalSrc;
-            lightboxImage.alt = img.alt;
-            lightboxImage.classList.remove('loading');
-            
-            // Hide loading spinner
-            if (loadingElement) {
-                loadingElement.classList.add('hidden');
-            }
-        };
-        
-        tempImage.onerror = function() {
-            // Failed to load original - fallback to medium image
-            console.warn('Failed to load original image, using medium fallback:', originalSrc);
-            lightboxImage.src = img.src; // Use the medium image as fallback
-            lightboxImage.alt = img.alt;
-            lightboxImage.classList.remove('loading');
-            
-            // Hide loading spinner
-            if (loadingElement) {
-                loadingElement.classList.add('hidden');
-            }
-        };
-        
-        // Start loading the original image
-        tempImage.src = originalSrc;
-
-        // Preload adjacent images for smoother navigation
-        preloadAdjacentImages(index);
-    }
-
-    function preloadAdjacentImages(currentIndex) {
-        const preloadIndices = [
-            currentIndex - 1 >= 0 ? currentIndex - 1 : images.length - 1,
-            currentIndex + 1 < images.length ? currentIndex + 1 : 0
-        ];
-
-        preloadIndices.forEach(index => {
-            const item = images[index];
-            const img = item.querySelector('img');
-            const originalSrc = img.dataset.original || img.src;
-            
-            // Create new image element to preload
-            const preloadImg = new Image();
-            preloadImg.src = originalSrc;
-        });
-    }
 }
 
-// Lazy loading functionality
+// =====================
+// Lazy loading
+// =====================
+
 function initializeLazyLoading() {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    
-    images.forEach(img => {
-        if (img.complete && img.naturalWidth > 0) {
-            img.classList.add('loaded');
-        } else {
-            img.addEventListener('load', () => {
-                img.classList.add('loaded');
-            });
-        }
-    });
-    
-    const imageObserver = new IntersectionObserver((entries, observer) => {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
-                img.addEventListener('load', () => {
-                    img.classList.add('loaded');
-                });
+                img.classList.add('loaded');
                 observer.unobserve(img);
             }
         });
     });
 
-    images.forEach(img => imageObserver.observe(img));
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        observer.observe(img);
+    });
 }
+
+// =====================
+// Init
+// =====================
+
+document.addEventListener('DOMContentLoaded', async () => {
+    const loader = new ComponentLoader();
+    const page = document.body.dataset.page;
+
+    // Inject sidebar and footer
+    await loader.injectComponent('sidebar', 'sidebar');
+    await loader.injectComponent('footer-content', 'footer');
+
+    // Inject lightbox if present
+    await loader.injectComponent('lightbox-content', 'lightbox');
+
+    // Set active nav link and initialize sidebar toggle
+    setActiveNavLink();
+    initializeSidebar();
+
+    // Page-specific logic
+    if (page === 'selected-works') {
+        await loader.generateSubNav();
+        await loader.generateSelectedWorks();
+        // Re-observe images added dynamically
+        initializeLazyLoading();
+        // Scroll-spy needs content to be present
+        setTimeout(initializeScrollSpy, 50);
+    }
+
+    // Initialize lightbox (works on any page with gallery items)
+    initializeLightbox();
+    initializeLazyLoading();
+});

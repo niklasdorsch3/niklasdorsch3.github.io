@@ -4,90 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Contemporary artist exploring abstract landscapes through mythical narratives. View paintings and artwork by Niklas Dorsch.">
-    <meta name="keywords" content="Niklas Dorsch, artist, painting, abstract art, contemporary art, NYC artist">
     <meta property="og:title" content="Niklas Dorsch - Contemporary Artist">
     <meta property="og:description" content="Contemporary artist exploring abstract landscapes through mythical narratives. View paintings and artwork by Niklas Dorsch.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://niklasdorsch3.github.io">
-    
-    <title>Niklas Dorsch - Artist Portfolio</title>
+    <title>Niklas Dorsch</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="home">
-    
-    <div id="header-content">
-        <!-- Header content will be loaded dynamically -->
-    </div>
 
-    <main>
-        <section id="home" class="section hero">
-            <h1>Niklas Dorsch</h1>
-            <p class="hero-subtitle">Artist</p>
-        </section>
+    <div class="layout">
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu">&#9776;</button>
 
-        <section id="about" class="section">
-            <div class="container">
-                <h2>Artist Statement</h2>
-                <div class="artist-statement-content">
-                    <div class="statement-text">
-                        <p>Niklas Dorsch began painting in 2019 after moving to New York, where classes at the New York Studio School deepened his commitment to art.</p>
-                        <p>Using wet-on-wet techniques and a minimal brush palette, Niklas begins with abstract backgrounds and gradually "carves out" imagined forms.</p>
-                        <p>Currently, he is <b>seeking to develop a more intentional dialogue between intuitive mark-making and conceptual framework</b>. This period of artistic inquiry represents a crucial juncture in his practice, where he aims to synthesize his technical foundation with deeper thematic exploration.</p>
-                        <p>Through dedicated time and resources, he envisions his work evolving toward a more cohesive body that examines the psychological landscapes where individual experience meets universal narrative.</p>
-                    </div>
-                    <div class="statement-image">
-                        <img src="images/niklas_dorsch_in_gallery.jpeg" alt="Niklas Dorsch in gallery setting" loading="lazy">
-                    </div>
+        <aside class="sidebar" id="sidebar">
+            <!-- Sidebar injected by JS -->
+        </aside>
+
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+        <main class="main-content">
+            <div class="hero-wrapper">
+                <div class="gallery-item"
+                     data-title="Bar Scene"
+                     data-medium="Oil on Canvas"
+                     data-dimensions='15" x 18"'
+                     data-year="2025"
+                     data-description="An angel visits a bar in the late afternoon"
+                     data-src="images/artworks/medium/niklas_dorsch_bar_scene.jpg"
+                     data-original="images/artworks/originals/niklas_dorsch_bar_scene.jpeg">
+                    <img src="images/artworks/medium/niklas_dorsch_bar_scene.jpg"
+                         alt="Niklas Dorsch — Bar Scene">
                 </div>
             </div>
-        </section>
-
-        <section id="collections" class="section">
-            <div class="container">
-                <h2>Collections</h2>
-                <div class="collections-grid" id="collections-grid">
-                    <!-- Collections will be loaded dynamically -->
-                </div>
-            </div>
-        </section>
-
-        <section id="past-exhibits" class="section">
-            <div class="container">
-                <h2>Past Exhibits</h2>
-                <p><b>2025</b> - "Paintings from 8th Street" - June 7th, 2025 - Group Show - Seven House Gallery, Brooklyn</p>
-            </div>
-        </section>
-
-        <section id="education" class="section">
-            <div class="container">
-                <h2>Education</h2>
-                <p><b>2025</b> - Art Students League - Figure Drawing</p>
-                <p><b>2023-2024</b> - New York Studio School - Painting with Silas Borsos</p>
-                <p><b>2023</b> - New York Studio School - Drawing with Sam Levy</p>
-                <p><b>2019</b> - New York Studio School - Painting with Seth Becker</p>
-                <p><b>2019</b> - New York Studio School - Drawing with Clintel Steed</p>
-                <p><b>2018</b> - New York Studio School - Drawing with John Lees</p>
-
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <div class="container">
-                <h2>Contact</h2>
-                <p>For inquiries about artwork, commissions, or exhibitions</p>
-                <p class="contact-info">dorschniklas@gmail.com</p>
-                <p><a  class="contact-info" href="https://www.instagram.com/niklas.dorsch.art/">@niklas.dorsch.art</a></p>
-                <p class="">Based in Brooklyn, NY</p>
-            </div>
-        </section>
-    </main>
-
-    <div id="footer-content">
-        <!-- Footer content will be loaded dynamically -->
+            <div class="flex-spacer"></div>
+            <div id="footer-content"></div>
+        </main>
     </div>
+
+    <div id="lightbox-content"></div>
 
     <script src="js/components.js"></script>
 </body>
