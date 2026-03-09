@@ -44,13 +44,14 @@ class ComponentLoader {
                 const mediumFilename = artwork.filename.replace(/\.jpeg$/i, '.jpg');
                 const mediumSrc = `images/artworks/medium/${mediumFilename}`;
                 const originalSrc = `images/artworks/originals/${artwork.filename}`;
+                const esc = str => (str || '').replace(/"/g, '&quot;');
                 itemsHtml += `
                     <div class="gallery-item"
-                        data-title="${artwork.title}"
-                        data-medium="${artwork.medium || ''}"
-                        data-dimensions="${artwork.dimensions || ''}"
-                        data-year="${artwork.year || ''}"
-                        data-description="${artwork.description || ''}"
+                        data-title="${esc(artwork.title)}"
+                        data-medium="${esc(artwork.medium)}"
+                        data-dimensions="${esc(artwork.dimensions)}"
+                        data-year="${esc(artwork.year)}"
+                        data-description="${esc(artwork.description)}"
                         data-src="${mediumSrc}"
                         data-original="${originalSrc}">
                         <img src="${mediumSrc}"
