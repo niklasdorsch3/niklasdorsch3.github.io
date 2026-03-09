@@ -130,6 +130,11 @@
     }
   },
   "collections": {
+    "collection_village_moment": {
+      "title": "Village Moment (WIP)",
+      "description": "",
+      "artworks": ["bar_scene"]
+    },
     "collection_studies_from_class": {
       "title": "Studio Studies",
       "description": "A collection of paintings created in class. In some instances the works were further developed after poses",
@@ -147,6 +152,6 @@
     }
   },
   "homepage": {
-    "collections": ["collection_untitled", "collection_studies_from_class", "collection_landscapes"]
+    "collections": ["collection_village_moment", "collection_untitled", "collection_studies_from_class", "collection_landscapes"]
   }
 }
