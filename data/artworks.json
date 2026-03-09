@@ -146,7 +146,7 @@
     "collection_studies_from_class": {
       "title": "Studio Studies",
       "description": "A collection of paintings created in class. In some instances the works were further developed after poses",
-      "artworks": ["poisoned_man", "nude", "sitting_woman", "standing_woman", "man_sitting", "foot"]
+      "artworks": ["foot", "poisoned_man", "nude", "sitting_woman", "standing_woman", "man_sitting"]
     },
     "collection_landscapes": {
       "title": "Landscapes",
@@ -156,10 +156,10 @@
     "collection_untitled": {
       "title": "Recent Work",
       "description": "A collection of works exploring various themes and subjects",
-      "artworks": ["skeli", "still_life", "bar_scene"]
+      "artworks": ["skeli", "still_life"]
     }
   },
   "homepage": {
-    "collections": ["collection_village_moment", "collection_untitled", "collection_studies_from_class", "collection_landscapes"]
+    "collections": ["collection_village_moment", "collection_studies_from_class", "collection_landscapes", "collection_untitled"]
   }
 }
