@@ -112,6 +112,14 @@
       "filename": "niklas_dorsch_falling_scene.jpeg",
       "description": "The story of Eve"
     },
+    "the_duel": {
+      "title": "The Duel",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "",
+      "filename": "the duel.jpeg",
+      "description": ""
+    },
     "bar_scene": {
       "title": "Bar Scene",
       "medium": "Oil on Canvas",
@@ -133,7 +141,7 @@
     "collection_village_moment": {
       "title": "Village Moment (WIP)",
       "description": "",
-      "artworks": ["bar_scene"]
+      "artworks": ["bar_scene", "the_duel"]
     },
     "collection_studies_from_class": {
       "title": "Studio Studies",
