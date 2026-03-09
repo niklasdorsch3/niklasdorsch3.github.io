@@ -116,8 +116,24 @@
       "title": "The Duel",
       "medium": "Oil on Canvas",
       "year": "2026",
-      "dimensions": "",
+      "dimensions": "36\" x 24\"",
       "filename": "the duel.jpeg",
+      "description": ""
+    },
+    "butcher": {
+      "title": "Butcher",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "15\" x 17\"",
+      "filename": "butcher.jpeg",
+      "description": ""
+    },
+    "card_game": {
+      "title": "Card Game",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "15\" x 17\"",
+      "filename": "card game.jpeg",
       "description": ""
     },
     "bar_scene": {
@@ -141,7 +157,7 @@
     "collection_village_moment": {
       "title": "Village Moment (WIP)",
       "description": "",
-      "artworks": ["bar_scene", "the_duel"]
+      "artworks": ["bar_scene", "the_duel", "butcher", "card_game"]
     },
     "collection_studies_from_class": {
       "title": "Studio Studies",
