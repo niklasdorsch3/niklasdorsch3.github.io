@@ -59,9 +59,13 @@ class ComponentLoader {
                     </div>`;
             }
 
+            const descriptionHtml = collection.description
+                ? `<p class="collection-description">${collection.description}</p>`
+                : '';
             html += `
                 <section class="collection-section" id="${key}">
                     <h2 class="collection-section-title">${collection.title}</h2>
+                    ${descriptionHtml}
                     <div class="gallery-grid">${itemsHtml}</div>
                 </section>`;
         }

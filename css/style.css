@@ -172,6 +172,14 @@ body {
    Gallery
    ===================== */
 
+.collection-description {
+    font-size: 0.875rem;
+    color: #555;
+    line-height: 1.6;
+    padding: 0 1.5rem 0.5rem;
+    max-width: 600px;
+}
+
 .gallery-grid {
     display: flex;
     flex-direction: column;

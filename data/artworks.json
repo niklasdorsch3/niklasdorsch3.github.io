@@ -156,22 +156,22 @@
   "collections": {
     "collection_village_moment": {
       "title": "Village Moment (WIP)",
-      "description": "",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "artworks": ["bar_scene", "the_duel", "butcher", "card_game"]
     },
     "collection_studies_from_class": {
       "title": "Studio Studies",
-      "description": "A collection of paintings created in class. In some instances the works were further developed after poses",
+      "description": "",
       "artworks": ["foot", "nude", "sitting_woman", "standing_woman", "man_sitting", "poisoned_man"]
     },
     "collection_landscapes": {
       "title": "Landscapes",
-      "description": "Landscapes created in plein air. In some instances the works were further developed in the studio",
+      "description": "",
       "artworks": ["manhattan", "lake_landscape", "bethesda_fountain"]
     },
     "collection_untitled": {
       "title": "Memento Mori",
-      "description": "A collection of works exploring various themes and subjects",
+      "description": "",
       "artworks": ["skeli", "still_life"]
     }
   },
