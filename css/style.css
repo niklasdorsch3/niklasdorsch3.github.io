@@ -175,7 +175,7 @@ body {
 .gallery-grid {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 40px;
     padding: 1.5rem;
 }
 
@@ -497,7 +497,7 @@ img[loading="lazy"].loaded {
     }
 
     .gallery-grid {
-        gap: 16px;
+        gap: 32px;
         padding: 1rem;
     }
 
