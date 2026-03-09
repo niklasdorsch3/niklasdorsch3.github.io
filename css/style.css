@@ -108,21 +108,22 @@ body {
 /* Hamburger button (mobile only) */
 .hamburger-btn {
     display: none;
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
+    position: sticky;
+    top: 0;
     z-index: 1001;
     background: white;
-    border: 1px solid #eee;
-    border-radius: 4px;
-    width: 36px;
-    height: 36px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    height: 48px;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding: 0 1rem;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #333;
     line-height: 1;
+    flex-shrink: 0;
 }
 
 /* Overlay (mobile only) */
@@ -478,6 +479,10 @@ img[loading="lazy"].loaded {
    ===================== */
 
 @media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+
     .sidebar {
         position: fixed;
         left: -220px;
@@ -514,7 +519,7 @@ img[loading="lazy"].loaded {
     }
 
     .statement-page {
-        padding: 3rem 1rem;
+        padding: 1.5rem 1rem;
     }
 
     .artist-statement-content {
