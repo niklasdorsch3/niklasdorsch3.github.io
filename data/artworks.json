@@ -167,7 +167,7 @@
     "collection_landscapes": {
       "title": "Landscapes",
       "description": "Landscapes created in plein air. In some instances the works were further developed in the studio",
-      "artworks": ["bethesda_fountain", "manhattan", "lake_landscape"]
+      "artworks": ["manhattan", "lake_landscape", "bethesda_fountain"]
     },
     "collection_untitled": {
       "title": "Memento Mori",
