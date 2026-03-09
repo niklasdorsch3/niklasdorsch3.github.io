@@ -88,6 +88,14 @@
       "filename": "niklas_dorsch_poisoned_man.jpeg",
       "description": "A nude man shortly after taking a dose of poison"
     },
+    "nude_2026": {
+      "title": "Nude",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "16\" x 12\"",
+      "filename": "nude.jpeg",
+      "description": ""
+    },
     "foot": {
       "title": "Foot",
       "medium": "Oil on Gesso Board",
@@ -162,7 +170,7 @@
     "collection_studies_from_class": {
       "title": "Studio Studies",
       "description": "",
-      "artworks": ["foot", "nude", "sitting_woman", "standing_woman", "man_sitting", "poisoned_man"]
+      "artworks": ["nude_2026", "foot", "nude", "sitting_woman", "standing_woman", "man_sitting", "poisoned_man"]
     },
     "collection_landscapes": {
       "title": "Landscapes",
