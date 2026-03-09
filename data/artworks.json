@@ -156,7 +156,7 @@
   "collections": {
     "collection_village_moment": {
       "title": "Village Moment (WIP)",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "description": "A series of paintings set in a German village that has existed for centuries — each canvas its own scene, a shop, a restaurant, a home — together forming one place, one moment. The figures are not remembered but invented in the act of painting, drawn from imagination into a world that lives somewhere between memory and longing.",
       "artworks": ["bar_scene", "the_duel", "butcher", "card_game"]
     },
     "collection_studies_from_class": {
