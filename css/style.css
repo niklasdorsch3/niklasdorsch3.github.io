@@ -218,11 +218,11 @@ body {
 }
 
 .collection-section-title {
-    font-size: 0.75rem;
+    font-size: 0.95rem;
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.12em;
-    color: #bbb;
+    color: #555;
     margin-bottom: 1rem;
 }
 
