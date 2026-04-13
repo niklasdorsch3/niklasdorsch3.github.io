@@ -152,6 +152,70 @@
       "filename": "niklas_dorsch_bar_scene.jpeg",
       "description": "An angel visits a bar in the late afternoon"
     },
+    "bakery": {
+      "title": "Bakery",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "",
+      "filename": "bakery.jpeg",
+      "description": "A dog wants a sniff of the goods"
+    },
+    "dentist": {
+      "title": "Dentist",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "15\" x 18\"",
+      "filename": "dentist.jpeg",
+      "description": "Pulling teeth is never comfortable"
+    },
+    "flower_shop": {
+      "title": "Flower Shop",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "15\" x 18\"",
+      "filename": "flower shop.jpeg",
+      "description": "A man enjoys the flowers"
+    },
+    "restaurant": {
+      "title": "Restaurant (who wants a bribe?)",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "15\" x 18\"",
+      "filename": "restaurant.jpeg",
+      "description": "A lot to unpack during this lunch meeting"
+    },
+    "swimming_pool": {
+      "title": "Swimming Pool",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "15\" x 18\"",
+      "filename": "swimming pool.jpeg",
+      "description": "Peacocking at the local pool"
+    },
+    "the_fountain": {
+      "title": "The Fountain",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "30\" x 30\"",
+      "filename": "the fountain.jpeg",
+      "description": "Bathers enjoy the fountain, creatures have stolen a key"
+    },
+    "the_cafe": {
+      "title": "The Cafe (Roulin's Announcement)",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "15\" x 18\"",
+      "filename": "the_cafe.jpeg",
+      "description": "Roulin announces he's seen the angel"
+    },
+    "war": {
+      "title": "War",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "15\" x 18\"",
+      "filename": "war.jpeg",
+      "description": "A sun heads to war"
+    },
     "lake_landscape": {
       "title": "Lake Landscape",
       "medium": "Oil on Canvas Board",
@@ -165,7 +229,7 @@
     "collection_village_moment": {
       "title": "Village Moment (WIP)",
       "description": "A series of paintings set in a German village that has existed for centuries — each canvas its own scene, a shop, a restaurant, a home — together forming one place, one moment. The figures are not remembered but invented in the act of painting, drawn from imagination into a world that lives somewhere between memory and longing.",
-      "artworks": ["bar_scene", "the_duel", "butcher", "card_game"]
+      "artworks": ["bar_scene", "the_duel", "butcher", "card_game", "bakery", "dentist", "flower_shop", "restaurant", "swimming_pool", "the_fountain", "the_cafe", "war"]
     },
     "collection_studies_from_class": {
       "title": "Studio Studies",
