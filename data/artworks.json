@@ -216,6 +216,30 @@
       "filename": "war.jpeg",
       "description": "A sun heads to war"
     },
+    "raymond_reading": {
+      "title": "Raymond Reading",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "16\" x 12\"",
+      "filename": "raymond_reading.jpeg",
+      "description": ""
+    },
+    "raymond_sleeping": {
+      "title": "Raymond Sleeping",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "12\" x 16\"",
+      "filename": "raymond_sleeping.jpeg",
+      "description": ""
+    },
+    "village_landscape": {
+      "title": "Village Landscape",
+      "medium": "Oil on Canvas",
+      "year": "2024–2026",
+      "dimensions": "24\" x 36\"",
+      "filename": "village_landscape.jpeg",
+      "description": ""
+    },
     "lake_landscape": {
       "title": "Lake Landscape",
       "medium": "Oil on Canvas Board",
@@ -234,12 +258,12 @@
     "collection_studies_from_class": {
       "title": "Studio Studies",
       "description": "",
-      "artworks": ["nude_2026", "foot", "nude", "sitting_woman", "standing_woman", "man_sitting", "poisoned_man"]
+      "artworks": ["nude_2026", "raymond_reading", "raymond_sleeping", "foot", "nude", "sitting_woman", "standing_woman", "man_sitting", "poisoned_man"]
     },
     "collection_landscapes": {
       "title": "Landscapes",
       "description": "",
-      "artworks": ["manhattan", "lake_landscape", "bethesda_fountain"]
+      "artworks": ["manhattan", "village_landscape", "lake_landscape", "bethesda_fountain"]
     },
     "collection_untitled": {
       "title": "Memento Mori",
