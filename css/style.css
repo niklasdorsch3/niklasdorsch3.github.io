@@ -187,7 +187,7 @@ body {
 .gallery-grid {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 60px;
     padding: 1.5rem;
 }
 
@@ -198,7 +198,7 @@ body {
 .gallery-item img {
     display: block;
     width: auto;
-    max-width: 66.667%;
+    max-width: 55%;
     height: auto;
     max-height: 100vh;
     margin: 0 auto;
@@ -513,8 +513,12 @@ img[loading="lazy"].loaded {
     }
 
     .gallery-grid {
-        gap: 32px;
+        gap: 48px;
         padding: 1rem;
+    }
+
+    .gallery-item img {
+        max-width: 85%;
     }
 
     .collection-section {
