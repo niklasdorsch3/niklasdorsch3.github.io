@@ -252,7 +252,7 @@
   "collections": {
     "collection_village_moment": {
       "title": "Village Moment",
-      "description": "A series of paintings set in a German village that has existed for centuries — each canvas its own scene, a shop, a restaurant, a home — together forming one place, one moment. The figures are not remembered but invented in the act of painting, drawn from imagination into a world that lives somewhere between memory and longing.",
+      "description": "Village Moment is a series of twelve oil paintings depicting a single fictional German village frozen at one moment in time. Each canvas is its own scene — a bar, a butcher shop, a café, a fountain — but together they form one place, viewed through twelve windows simultaneously. The village is built from impressions of childhood summers spent in my grandparents' village in Germany, where my immigrant parents took us every year. It is not a document of a place that existed; it is an attempt to find one that never quite did.",
       "artworks": ["bar_scene", "butcher", "card_game", "bakery", "dentist", "flower_shop", "restaurant", "swimming_pool", "the_fountain", "the_cafe", "the_duel", "war"]
     },
     "collection_studies_from_class": {
