@@ -507,7 +507,7 @@ img[loading="lazy"].loaded {
 }
 
 /* =====================
-   Responsive — Mobile
+   Responsive - Mobile
    ===================== */
 
 @media (max-width: 768px) {
