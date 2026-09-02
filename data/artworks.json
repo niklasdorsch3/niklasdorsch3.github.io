@@ -151,18 +151,95 @@
       "dimensions": "10\" x 20\"",
       "filename": "niklas_dorsch_lake_landscape.jpeg",
       "description": "Lake view from my grandmother's home"
+    },
+    "raymond_sleeping": {
+      "title": "Raymond Sleeping",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "12\" x 16\"",
+      "filename": "raymond_sleeping.jpeg",
+      "description": ""
+    },
+    "nude_and_raymond": {
+      "title": "Nude and Raymond",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "18\" x 12\"",
+      "filename": "nude and raymond.jpeg",
+      "description": ""
+    },
+    "village_landscape_2": {
+      "title": "Village Landscape 2",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "12\" x 36\"",
+      "filename": "village_landscape_2.jpeg",
+      "description": ""
+    },
+    "jailhouse": {
+      "title": "Jail House",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "14\" x 18\"",
+      "filename": "jailhouse.jpeg",
+      "description": ""
+    },
+    "strandraeuber": {
+      "title": "Strandräuber (Beach Robber)",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "12\" x 9\"",
+      "filename": "strandraeuber.jpeg",
+      "description": ""
+    },
+    "red_card": {
+      "title": "The Red Card",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "10\" x 8\"",
+      "filename": "red_card.jpeg",
+      "description": ""
+    },
+    "pond": {
+      "title": "The Pond",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "20\" x 20\"",
+      "filename": "pond.jpeg",
+      "description": ""
+    },
+    "clinton_464": {
+      "title": "464 Clinton Ave",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "16\" x 12\"",
+      "filename": "clinton_464.jpeg",
+      "description": ""
+    },
+    "the_house": {
+      "title": "The House",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "47\" x 43\"",
+      "filename": "",
+      "description": "PLACEHOLDER — awaiting image; not yet shown in any collection"
     }
   },
   "collections": {
+    "collection_clinton_washington": {
+      "title": "Clinton-Washington",
+      "description": "A work-in-progress series focused on the history and architecture of the Clinton Hill Historic District.",
+      "artworks": ["clinton_464"]
+    },
     "collection_village_moment": {
       "title": "Village Moment",
       "description": "Village Moment is a series of oil paintings depicting a single fictional German village frozen at one moment in time. Each canvas is its own scene — a bar, a butcher shop, a café, a fountain — but together they form one place, viewed through many windows simultaneously. The village is built from impressions of childhood summers spent in my grandparents' village in Germany, where my immigrant parents took us every year. It is not a document of a place that existed; it is an attempt to find one that never quite did.",
-      "artworks": ["the_fountain", "bar_scene", "village_landscape", "butcher", "card_game", "bakery", "dentist", "flower_shop", "restaurant", "swimming_pool", "the_cafe", "war"]
+      "artworks": ["the_fountain", "bar_scene", "village_landscape", "butcher", "card_game", "bakery", "dentist", "flower_shop", "restaurant", "swimming_pool", "the_cafe", "war", "village_landscape_2", "jailhouse", "strandraeuber", "red_card", "pond"]
     },
     "collection_studies_from_class": {
       "title": "Studio Studies",
       "description": "",
-      "artworks": ["falling_scene", "nude_2026", "raymond_reading", "poisoned_man", "still_life"]
+      "artworks": ["falling_scene", "nude_2026", "raymond_reading", "raymond_sleeping", "nude_and_raymond", "poisoned_man", "still_life"]
     },
     "collection_landscapes": {
       "title": "Landscapes",
@@ -171,6 +248,6 @@
     }
   },
   "homepage": {
-    "collections": ["collection_village_moment", "collection_studies_from_class", "collection_landscapes"]
+    "collections": ["collection_clinton_washington", "collection_village_moment", "collection_studies_from_class", "collection_landscapes"]
   }
 }
