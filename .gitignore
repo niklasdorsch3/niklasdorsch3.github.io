@@ -36,3 +36,5 @@ build/
 .env.development.local
 .env.test.local
 .env.production.local
+# Local image staging folder (source exports, not served)
+images/artworks/originals/export_sept2/
