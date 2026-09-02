@@ -193,7 +193,7 @@
       "description": ""
     },
     "nude_2026": {
-      "title": "Nude",
+      "title": "Nude, 2026",
       "medium": "Oil on Canvas",
       "year": "2026",
       "dimensions": "12\" x 16\"",
@@ -214,6 +214,94 @@
       "year": "2026",
       "dimensions": "10\" x 8\"",
       "filename": "red_card.jpeg",
+      "description": ""
+    },
+    "nude": {
+      "title": "Nude",
+      "medium": "Oil on Board",
+      "year": "2023",
+      "dimensions": "12\" x 12\"",
+      "filename": "niklas_dorsch_nude.jpeg",
+      "description": "Figure study over 2 classes"
+    },
+    "man_back": {
+      "title": "Man Back",
+      "medium": "Oil on Canvas Paper",
+      "year": "2023",
+      "dimensions": "16\" x 12\"",
+      "filename": "niklas_dorsch_man_back.jpeg",
+      "description": "Figure study from behind"
+    },
+    "man_goose": {
+      "title": "Man Goose",
+      "medium": "Oil on Canvas",
+      "year": "2023",
+      "dimensions": "16\" x 12\"",
+      "filename": "niklas_dorsch_ man_goose.jpeg",
+      "description": "Figure with goose. Goose was not in studio"
+    },
+    "baseball": {
+      "title": "Baseball",
+      "medium": "Acrylic on Canvas",
+      "year": "2019",
+      "dimensions": "24\" x 8\"",
+      "filename": "niklas_dorsch_ baseball.jpeg",
+      "description": "Figure shortly after throwing a baseball"
+    },
+    "skeli": {
+      "title": "Skeli",
+      "medium": "Oil on Canvas",
+      "year": "2023",
+      "dimensions": "10\" x 10\"",
+      "filename": "niklas_dorsch_skeli.jpeg",
+      "description": "Commissioned by friend who loves Skelis"
+    },
+    "sitting_woman": {
+      "title": "Sitting Woman",
+      "medium": "Oil on Canvas",
+      "year": "2024",
+      "dimensions": "16\" x 12\"",
+      "filename": "niklas_dorsch_sitting-woman.jpeg",
+      "description": "Woman in seated pose"
+    },
+    "standing_woman": {
+      "title": "Standing Woman",
+      "medium": "Oil on Canvas",
+      "year": "2024",
+      "dimensions": "16\" x 12\"",
+      "filename": "niklas_dorsch_standing woman.jpeg",
+      "description": "Woman in standing pose, leaning over to tie her 'shoe'"
+    },
+    "man_sitting": {
+      "title": "Man Sitting",
+      "medium": "Oil on Canvas",
+      "year": "2024",
+      "dimensions": "16\" x 12\"",
+      "filename": "niklas_dorsch_ man_sitting.jpeg",
+      "description": "Man in seated pose"
+    },
+    "foot": {
+      "title": "Foot",
+      "medium": "Oil on Gesso Board",
+      "year": "2025",
+      "dimensions": "8\" x 10\"",
+      "filename": "niklas_dorsch_foot.jpeg",
+      "description": "Study of foot and a man reading the newspaper"
+    },
+    "bethesda_fountain": {
+      "title": "Bethesda Fountain",
+      "medium": "Oil on Gesso Board",
+      "year": "2024",
+      "dimensions": "8\" x 10\"",
+      "filename": "niklas_dorsch_bethesda_fountain.jpeg",
+      "description": "Central Park landmark, improved in studio"
+    },
+    "the_duel": {
+      "title": "The Duel",
+      "medium": "Oil on Canvas",
+      "year": "2026",
+      "dimensions": "36\" x 24\"",
+      "filename": "the duel.jpeg",
       "description": ""
     },
     "the_house": {
@@ -239,7 +327,7 @@
     "collection_studies_from_class": {
       "title": "Studio Studies",
       "description": "",
-      "artworks": ["nude_and_raymond", "raymond_reading", "raymond_sleeping", "poisoned_man", "still_life"]
+      "artworks": ["raymond_sleeping", "nude_and_raymond", "raymond_reading", "poisoned_man", "still_life"]
     },
     "collection_landscapes": {
       "title": "Landscapes",
