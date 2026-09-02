@@ -57,6 +57,10 @@ class ComponentLoader {
                         <img src="${mediumSrc}"
                              alt="${artwork.title}"
                              loading="lazy">
+                        <div class="gallery-caption">
+                            <span class="gallery-caption-title">${artwork.title}</span>
+                            <span class="gallery-caption-dimensions">${artwork.dimensions}</span>
+                        </div>
                     </div>`;
             }
 
@@ -170,6 +174,7 @@ function initializeLightbox() {
     const lightboxLoading = document.getElementById('lightbox-loading');
     const lightboxTitle = document.getElementById('lightbox-title');
     const lightboxDetails = document.getElementById('lightbox-details');
+    const lightboxDescription = document.getElementById('lightbox-description');
     const closeBtn = lightbox.querySelector('.lightbox-close');
     const prevBtn = document.getElementById('lightbox-prev');
     const nextBtn = document.getElementById('lightbox-next');
@@ -208,10 +213,11 @@ function initializeLightbox() {
 
         if (lightboxTitle) lightboxTitle.textContent = title;
         if (lightboxDetails) {
-            const parts = [medium, dimensions, year].filter(Boolean).join(' · ');
-            lightboxDetails.textContent = description
-                ? `${parts}${parts ? ' — ' : ''}${description}`
-                : parts;
+            lightboxDetails.textContent = [year, medium, dimensions].filter(Boolean).join(' · ');
+        }
+        if (lightboxDescription) {
+            lightboxDescription.textContent = description;
+            lightboxDescription.hidden = !description;
         }
 
         // Show loading, start with medium image

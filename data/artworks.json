@@ -1,69 +1,5 @@
 {
   "artworks": {
-    "nude": {
-      "title": "Nude",
-      "medium": "Oil on Board",
-      "year": "2023",
-      "dimensions": "12\" x 12\"",
-      "filename": "niklas_dorsch_nude.jpeg",
-      "description": "Figure study over 2 classes"
-    },
-    "man_back": {
-      "title": "Man Back",
-      "medium": "Oil on Canvas Paper",
-      "year": "2023",
-      "dimensions": "16\" x 12\"",
-      "filename": "niklas_dorsch_man_back.jpeg",
-      "description": "Figure study from behind"
-    },
-    "man_goose": {
-      "title": "Man Goose",
-      "medium": "Oil on Canvas",
-      "year": "2023",
-      "dimensions": "16\" x 12\"",
-      "filename": "niklas_dorsch_ man_goose.jpeg",
-      "description": "Figure with goose. Goose was not in studio"
-    },
-    "baseball": {
-      "title": "Baseball",
-      "medium": "Acrylic on Canvas",
-      "year": "2019",
-      "dimensions": "24\" x 8\"",
-      "filename": "niklas_dorsch_ baseball.jpeg",
-      "description": "Figure shortly after throwing a baseball"
-    },
-    "skeli": {
-      "title": "Skeli",
-      "medium": "Oil on Canvas",
-      "year": "2023",
-      "dimensions": "10\" x 10\"",
-      "filename": "niklas_dorsch_skeli.jpeg",
-      "description": "Commissioned by friend who loves Skelis"
-    },
-    "sitting_woman": {
-      "title": "Sitting Woman",
-      "medium": "Oil on Canvas",
-      "year": "2024",
-      "dimensions": "16\" x 12\"",
-      "filename": "niklas_dorsch_sitting-woman.jpeg",
-      "description": "Woman in seated pose"
-    },
-    "standing_woman": {
-      "title": "Standing Woman",
-      "medium": "Oil on Canvas",
-      "year": "2024",
-      "dimensions": "16\" x 12\"",
-      "filename": "niklas_dorsch_standing woman.jpeg",
-      "description": "Woman in standing pose, leaning over to tie her 'shoe'"
-    },
-    "man_sitting": {
-      "title": "Man Sitting",
-      "medium": "Oil on Canvas",
-      "year": "2024",
-      "dimensions": "16\" x 12\"",
-      "filename": "niklas_dorsch_ man_sitting.jpeg",
-      "description": "Man in seated pose"
-    },
     "manhattan": {
       "title": "Manhattan",
       "medium": "Oil on Gesso Board",
@@ -94,23 +30,7 @@
       "year": "2026",
       "dimensions": "16\" x 12\"",
       "filename": "nude.jpeg",
-      "description": ""
-    },
-    "foot": {
-      "title": "Foot",
-      "medium": "Oil on Gesso Board",
-      "year": "2025",
-      "dimensions": "8\" x 10\"",
-      "filename": "niklas_dorsch_foot.jpeg",
-      "description": "Study of foot and a man reading the newspaper"
-    },
-    "bethesda_fountain": {
-      "title": "Bethesda Fountain",
-      "medium": "Oil on Gesso Board",
-      "year": "2024",
-      "dimensions": "8\" x 10\"",
-      "filename": "niklas_dorsch_bethesda_fountain.jpeg",
-      "description": "Central Park landmark, improved in studio"
+      "description": "Painting into a dark, wet ground"
     },
     "falling_scene": {
       "title": "Falling Scene",
@@ -120,21 +40,13 @@
       "filename": "niklas_dorsch_falling_scene.jpeg",
       "description": "The story of Eve"
     },
-    "the_duel": {
-      "title": "The Duel",
-      "medium": "Oil on Canvas",
-      "year": "2026",
-      "dimensions": "36\" x 24\"",
-      "filename": "the duel.jpeg",
-      "description": ""
-    },
     "butcher": {
       "title": "Butcher",
       "medium": "Oil on Canvas",
       "year": "2026",
       "dimensions": "13\" x 19\"",
       "filename": "butcher.jpeg",
-      "description": ""
+      "description": "The butcher argues with customers"
     },
     "card_game": {
       "title": "Card Game",
@@ -142,7 +54,7 @@
       "year": "2026",
       "dimensions": "11\" x 15\"",
       "filename": "card game.jpeg",
-      "description": ""
+      "description": "Some acquaintances play a game of poker"
     },
     "bar_scene": {
       "title": "Bar Scene",
@@ -222,15 +134,7 @@
       "year": "2026",
       "dimensions": "16\" x 12\"",
       "filename": "raymond_reading.jpeg",
-      "description": ""
-    },
-    "raymond_sleeping": {
-      "title": "Raymond Sleeping",
-      "medium": "Oil on Canvas",
-      "year": "2026",
-      "dimensions": "12\" x 16\"",
-      "filename": "raymond_sleeping.jpeg",
-      "description": ""
+      "description": "Experiments with impasto"
     },
     "village_landscape": {
       "title": "Village Landscape",
@@ -238,7 +142,7 @@
       "year": "2024–2026",
       "dimensions": "24\" x 36\"",
       "filename": "village_landscape.jpeg",
-      "description": ""
+      "description": "The village from a more distant view"
     },
     "lake_landscape": {
       "title": "Lake Landscape",
@@ -252,26 +156,21 @@
   "collections": {
     "collection_village_moment": {
       "title": "Village Moment",
-      "description": "Village Moment is a series of twelve oil paintings depicting a single fictional German village frozen at one moment in time. Each canvas is its own scene — a bar, a butcher shop, a café, a fountain — but together they form one place, viewed through twelve windows simultaneously. The village is built from impressions of childhood summers spent in my grandparents' village in Germany, where my immigrant parents took us every year. It is not a document of a place that existed; it is an attempt to find one that never quite did.",
-      "artworks": ["bar_scene", "butcher", "card_game", "bakery", "dentist", "flower_shop", "restaurant", "swimming_pool", "the_fountain", "the_cafe", "the_duel", "war"]
+      "description": "Village Moment is a series of oil paintings depicting a single fictional German village frozen at one moment in time. Each canvas is its own scene — a bar, a butcher shop, a café, a fountain — but together they form one place, viewed through many windows simultaneously. The village is built from impressions of childhood summers spent in my grandparents' village in Germany, where my immigrant parents took us every year. It is not a document of a place that existed; it is an attempt to find one that never quite did.",
+      "artworks": ["the_fountain", "bar_scene", "village_landscape", "butcher", "card_game", "bakery", "dentist", "flower_shop", "restaurant", "swimming_pool", "the_cafe", "war"]
     },
     "collection_studies_from_class": {
       "title": "Studio Studies",
       "description": "",
-      "artworks": ["nude_2026", "raymond_reading", "raymond_sleeping", "foot", "nude", "sitting_woman", "standing_woman", "man_sitting", "poisoned_man"]
+      "artworks": ["falling_scene", "nude_2026", "raymond_reading", "poisoned_man", "still_life"]
     },
     "collection_landscapes": {
       "title": "Landscapes",
       "description": "",
-      "artworks": ["manhattan", "village_landscape", "lake_landscape", "bethesda_fountain"]
-    },
-    "collection_untitled": {
-      "title": "Memento Mori",
-      "description": "",
-      "artworks": ["skeli", "still_life"]
+      "artworks": ["manhattan", "lake_landscape"]
     }
   },
   "homepage": {
-    "collections": ["collection_village_moment", "collection_studies_from_class", "collection_landscapes", "collection_untitled"]
+    "collections": ["collection_village_moment", "collection_studies_from_class", "collection_landscapes"]
   }
 }
