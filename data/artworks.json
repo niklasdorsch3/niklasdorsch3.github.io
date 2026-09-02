@@ -188,7 +188,7 @@
       "title": "464 Clinton Ave",
       "medium": "Oil on Canvas",
       "year": "2026",
-      "dimensions": "16\" x 12\"",
+      "dimensions": "12\" x 16\"",
       "filename": "clinton_464.jpeg",
       "description": ""
     },
@@ -321,7 +321,7 @@
     },
     "collection_village_moment": {
       "title": "Village Moment",
-      "description": "Village Moment is a series of oil paintings depicting a single fictional German village frozen at one moment in time. Each canvas is its own scene — a bar, a butcher shop, a café, a fountain — but together they form one place, viewed through many windows simultaneously. The village is built from impressions of childhood summers spent in my grandparents' village in Germany, where my immigrant parents took us every year. It is not a document of a place that existed; it is an attempt to find one that never quite did.",
+      "description": "Village Moment is a series of oil paintings depicting a single fictional German village frozen at one moment in time. Each canvas is its own scene - a bar, a butcher shop, a café, a fountain - but together they form one place, viewed through many windows simultaneously. The village is built from impressions of childhood summers spent in my grandparents' village in Germany. It is not a representation of memories, but is also imagined and it asks \"what is the difference?\".",
       "artworks": ["the_fountain", "bar_scene", "village_landscape", "village_landscape_2", "butcher", "card_game", "bakery", "dentist", "flower_shop", "restaurant", "swimming_pool", "the_cafe", "war", "jailhouse", "strandraeuber", "pond"]
     },
     "collection_studies_from_class": {
