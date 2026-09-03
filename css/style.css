@@ -160,8 +160,14 @@ body {
     padding: 2rem;
     display: flex;
     flex: 1;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+/* Mobile-only nav buttons under the hero image */
+.home-cta {
+    display: none;
 }
 
 .hero-wrapper .gallery-item img {
@@ -539,6 +545,32 @@ img[loading="lazy"].loaded {
 
     .hero-wrapper {
         padding: 1rem;
+    }
+
+    .home-cta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+    }
+
+    .home-cta-btn {
+        display: inline-block;
+        padding: 0.6rem 1.4rem;
+        border: 1px solid #333;
+        color: #333;
+        text-decoration: none;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .home-cta-btn:hover,
+    .home-cta-btn:active {
+        background: #333;
+        color: #faf9f7;
     }
 
     .gallery-grid {
